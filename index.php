@@ -1,3 +1,3 @@
 <?php
 
-echo "Ahojte";
+echo "Ahojte, toto je feature";
