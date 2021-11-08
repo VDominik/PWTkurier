@@ -16,6 +16,7 @@ export default function Home() {
       <Navbar />
 
       <main className={styles.main}>
+        <h1><p>Zaregistrujte sa  <a href="/register"> TU</a>.</p></h1>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
