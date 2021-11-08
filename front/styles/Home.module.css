@@ -2,6 +2,15 @@
   padding: 0 2rem;
 }
 
+.btn{
+  display: block;
+  width: 150px;
+  background: #4a5568;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+}
+
 .main {
   min-height: 100vh;
   padding: 4rem 0;
