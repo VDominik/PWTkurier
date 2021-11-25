@@ -23,6 +23,7 @@ const Main_imgs = () => {
                         <img width="100%" height="700px" src="/img/Main_imgs_warehouse/sklad.jpg"/>
                         <div className="container">
                             <div className="carousel-caption text-start">
+                                <div className="btn btn-light opacity-75" >
                                 <h1>Skupina divízií</h1>
                                 <p>
                                     PWT je popredný globálny líder v oblasti logistiky. Naša skupina divízií PWT ponúka
@@ -35,6 +36,8 @@ const Main_imgs = () => {
                                     zodpovedajú vašim
                                     obchodným potrebám.
                                 </p>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -43,6 +46,7 @@ const Main_imgs = () => {
 
                         <div className="container">
                             <div className="carousel-caption">
+                                <div className="btn btn-light opacity-75" >
                                 <h1>Nechajte PWT pracovať za Vás</h1>
                                 <p>
                                     Ako skúsený a spoľahlivý líder na trhu s globálnym dosahom vám nemusíme hovoriť len
@@ -56,7 +60,7 @@ const Main_imgs = () => {
                                     cenovú ponuku, prosím, použite náš nástroj Získajte cenovú ponuku. S ponukou DHL pre
                                     podniky zistíte,
                                     čo myslíme pod pojmom "Excelentnosť. Jednoducho doručené.
-                                </p>
+                                </p> </div>
                             </div>
                         </div>
                     </div>
@@ -65,6 +69,7 @@ const Main_imgs = () => {
 
                         <div className="container">
                             <div className="carousel-caption text-end">
+                                <div className="btn btn-light opacity-75" >
                                 <h1>Naše divízie</h1>
                                 <p>
                                     DHL spája ľudí vo viac ako 220 krajinách a oblastiach po celom svete. Vďaka úsiliu
@@ -72,7 +77,7 @@ const Main_imgs = () => {
                                     zamestnancov poskytujeme integrované služby a riešenia šité na mieru pre riadenie a
                                     prepravu listov,
                                     tovarov a informácií.
-                                </p>
+                                </p></div>
                             </div>
                         </div>
                     </div>
