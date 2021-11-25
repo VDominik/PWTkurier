@@ -3,48 +3,59 @@ import React from 'react';
 const Navbar = () => {
     return (
         <>
-            <div className="container marketing">
-                <div className="row">
-
+            <div className="container marketing p-2">
+                {/*Nadpis*/}
+                <div className="col text-center p-3">
+                    <button type="button" className="btn btn-outline-dark ratio ratio-10x9 fs-2 fw-ligh">Náš tím
+                    </button>
+                </div>
+                {/*Nastavenie Autorov*/}
+                <div className="row ">
                     {/*DOMINIK*/}
-                    <div className="col">
-
-                        <img className="bd-placeholder-img rounded-circle" width="200" height="200" src="/img/autors_imgs/dv.jpg"/>
-
-                        <h2>Dominik Václav</h2>
-                        <p>Vedúci projektu</p>
+                    <div className="col text-center p-3">
+                        <img className="bd-placeholder-img rounded-circle m-3" width="200" height="200"
+                             src="/img/autors_imgs/dv.jpg"/>
+                        <h2 className="fs-3 text-center">Dominik Václav</h2>
+                        <div className="mx-lg-4">
+                            <button type="button" className="btn btn-outline-dark ">Vedúci projektu</button>
+                        </div>
                     </div>
                     {/*DÁVID*/}
-                    <div className="col">
-                        <img className="bd-placeholder-img rounded-circle" width="200" height="200" src="/img/autors_imgs/dg.jpg"/>
+                    <div className="col text-center p-3">
+                        <img className="bd-placeholder-img rounded-circle m-3" width="200" height="200"
+                             src="/img/autors_imgs/dg.jpg"/>
 
-                        <h2>Dávid Galaba</h2>
-                        <p>Back-end</p>
-
+                        <h2 className="fs-3 mx-lg-3 text-center">Dávid Galaba</h2>
+                        <div className="mx-lg-5">
+                            <button type="button" className="btn btn-outline-dark ">Back-end</button>
+                        </div>
                     </div>
                     {/*BRANIS*/}
-                    <div className="col">
-                        <img className="bd-placeholder-img rounded-circle" width="200" height="200" src="/img/autors_imgs/bb.jpg"/>
-
-                        <h2>Branislav Bohunický</h2>
-
-                        <p>Dizajnér</p>
+                    <div className="col text-center p-3">
+                        <img className="bd-placeholder-img rounded-circle m-3" width="200" height="200"
+                             src="/img/autors_imgs/bb.jpg"/>
+                        <h2 className="fs-3 mx-lg-2 text-center">Braňo Bohunický</h2>
+                        <div className="mx-lg-5">
+                            <button type="button" className="btn btn-outline-dark ">Dizajnér</button>
+                        </div>
                     </div>
                     {/*LUBOMÍR*/}
-                    <div className="col">
-                        <img className="bd-placeholder-img rounded-circle" width="200" height="200" src="/img/autors_imgs/lc.jpg"/>
-
-                        <h2>Ĺubomír Cverčko</h2>
-
-                        <p>Safalátka front-endová</p>
+                    <div className="col text-center p-3">
+                        <img className="bd-placeholder-img rounded-circle m-3" width="200" height="200"
+                             src="/img/autors_imgs/lc.jpg"/>
+                        <h2 className="fs-3 mx-lg-2 text-center">Ľubomír Cverčko</h2>
+                        <div className="mx-lg-5">
+                            <button type="button" className="btn btn-outline-dark ">front-end</button>
+                        </div>
                     </div>
                     {/*MATÚŚ*/}
-                    <div className="col">
-                        <img className="bd-placeholder-img rounded-circle" width="200" height="200" src="/img/autors_imgs/ms.jpg"/>
-
-                        <h2>Matúš Šášik</h2>
-
-                        <p>NextJS</p>
+                    <div className="col text-center p-3">
+                        <img className="bd-placeholder-img rounded-circle m-3" width="200" height="200"
+                             src="/img/autors_imgs/ms.jpg"/>
+                        <h2 className="fs-3 mx-lg-2 text-center">Matúš Šášik</h2>
+                        <div className="mx-lg-5">
+                            <button onClick="/pes" type="button" className="btn btn-outline-dark  ">NextJS</button>
+                        </div>
                     </div>
                 </div>
             </div>
