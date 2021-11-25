@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Navbar = () => {
     return (
         <>
-            <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <nav className="position-relative navbar navbar-expand-md navbar-dark fixed-top bg-dark ">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">
                         PWTKURIER
