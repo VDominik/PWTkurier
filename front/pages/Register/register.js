@@ -1,22 +1,40 @@
+import React from 'react';
+import styles from '../../styles/Login.module.css';
 import Navbar from "../../components/Navbar/navbar";
+import Link from 'next/link';
 
 const register = () => {
     return (
         <>
+
             <Navbar/>
-            <div>
-                <h1>Registrácia</h1>
-                <p>Vyplnte registračný formulár</p>
-                <label htmlFor="email"><b>Email</b></label>
-                <input/> <br/>
-                <label htmlFor="psw"><b>Heslo</b></label>
-                <input/> <br/>
-                <label htmlFor="psw-repeat"><b>Znova zadajte heslo</b></label>
-                <input/> <br/>
-                <p>Vytvorením vášho účtu súhlasíte s obchodnými podmienkami... <a href="#"> Obchodné podmienky</a>.</p>
-                <button type={<textarea name="reg" id="1" cols="70" rows="40"></textarea>}>registracia</button>
-                <button type={<textarea name="reg" id="1" cols="70" rows="40"></textarea>}>zrušiť</button>
+
+            <img className={styles.bg} src="/img/Login/bg1.png"/>
+
+            <div className={styles.container}>
+
+                <div className={styles.input}>
+                    <form action="/Admin/admin">
+                        <h1 className={styles.h1}>Registrácia</h1>
+                        <label className={styles.label} htmlFor="name" > <b>Meno</b> </label>
+                        <input/><br/>
+                        <label className={styles.label} htmlFor="surname" > <b>Priezvisko</b> </label>
+                        <input/><br/>
+                        <label className={styles.label} htmlFor="email" > <b>Email</b> </label>
+                        <input/><br/>
+                        <label className={styles.label} htmlFor="psw"> <b>Heslo</b> </label>
+                        <input/> <br/>
+
+
+                        <a className="btn btn-outline-light m-3" data-toggle="collapse" href="/Login/login"
+                           role="button" aria-expanded="false" aria-controls="collapseExample">Registrovať sa</a>
+
+                        <br/>
+                    </form>
+                </div>
+
             </div>
+
         </>
     )
 }

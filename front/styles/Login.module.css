@@ -1,0 +1,43 @@
+.container {
+    height: 500px;
+    width: 300px;
+    padding: 50px;
+    background-color: #212529;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.a {
+    color: red;
+    text-decoration: none;
+}
+
+.bg{
+    overflow-y: hidden;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.h1{
+ padding: 5px;
+}
+
+.label{
+    margin: 5px;
+}
+
+.input{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
