@@ -3,143 +3,59 @@ import React from 'react';
 const Navbar = () => {
     return (
         <>
-            <div className="container marketing">
-                <div className="row">
-
+            <div className="container marketing p-2">
+                {/*Nadpis*/}
+                <div className="col text-center p-3">
+                    <button type="button" className="btn btn-outline-dark ratio ratio-10x9 fs-2 fw-ligh">Náš tím
+                    </button>
+                </div>
+                {/*Nastavenie Autorov*/}
+                <div className="row ">
                     {/*DOMINIK*/}
-                    <div className="col-lg-4">
-                        <svg
-                            className="bd-placeholder-img rounded-circle"
-                            width="140"
-                            height="140"
-                            xmlns="http://www.w3.org/2000/svg"
-                            role="img"
-                            aria-label="Placeholder: 140x140"
-                            preserveAspectRatio="xMidYMid slice"
-                            focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#777"/>
-                            <text x="50%" y="50%" fill="#777" dy=".3em">
-                                140x140
-                            </text>
-                        </svg>
-
-                        <h2>Dominik Václav</h2>
-                        <p>Vedúci projektu</p>
-                        <p>
-                            <a className="btn btn-secondary" href="#">
-                                View details &raquo;
-                            </a>
-                        </p>
+                    <div className="col text-center p-3">
+                        <img className="bd-placeholder-img rounded-circle m-3" width="200" height="200"
+                             src="/img/autors_imgs/dv.jpg"/>
+                        <h2 className="fs-3 text-center">Dominik Václav</h2>
+                        <div className="mx-lg-4">
+                            <button type="button" className="btn btn-outline-dark ">Vedúci projektu</button>
+                        </div>
                     </div>
                     {/*DÁVID*/}
-                    <div className="col-lg-4">
-                        <svg
-                            className="bd-placeholder-img rounded-circle"
-                            width="140"
-                            height="140"
-                            xmlns="http://www.w3.org/2000/svg"
-                            role="img"
-                            aria-label="Placeholder: 140x140"
-                            preserveAspectRatio="xMidYMid slice"
-                            focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#777"/>
-                            <text x="50%" y="50%" fill="#777" dy=".3em">
-                                140x140
-                            </text>
-                        </svg>
+                    <div className="col text-center p-3">
+                        <img className="bd-placeholder-img rounded-circle m-3" width="200" height="200"
+                             src="/img/autors_imgs/dg.jpg"/>
 
-                        <h2>Dávid Galaba</h2>
-                        <p>Back-end</p>
-                        <p>
-                            <a className="btn btn-secondary" href="#">
-                                View details &raquo;
-                            </a>
-                        </p>
+                        <h2 className="fs-3 mx-lg-3 text-center">Dávid Galaba</h2>
+                        <div className="mx-lg-5">
+                            <button type="button" className="btn btn-outline-dark ">Back-end</button>
+                        </div>
                     </div>
                     {/*BRANIS*/}
-                    <div className="col-lg-4">
-                        <svg
-                            className="bd-placeholder-img rounded-circle"
-                            width="140"
-                            height="140"
-                            xmlns="http://www.w3.org/2000/svg"
-                            role="img"
-                            aria-label="Placeholder: 140x140"
-                            preserveAspectRatio="xMidYMid slice"
-                            focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#777"/>
-                            <text x="50%" y="50%" fill="#777" dy=".3em">
-                                140x140
-                            </text>
-                        </svg>
-
-                        <h2>Branislav Bohunický</h2>
-
-                        <p>Dizajnér</p>
-                        <p>
-                            <a className="btn btn-secondary" href="#">
-                                View details &raquo;
-                            </a>
-                        </p>
+                    <div className="col text-center p-3">
+                        <img className="bd-placeholder-img rounded-circle m-3" width="200" height="200"
+                             src="/img/autors_imgs/bb.jpg"/>
+                        <h2 className="fs-3 mx-lg-2 text-center">Braňo Bohunický</h2>
+                        <div className="mx-lg-5">
+                            <button type="button" className="btn btn-outline-dark ">Dizajnér</button>
+                        </div>
                     </div>
-                    {/*LUKÁŠ*/}
-                    <div className="col-lg-4">
-                        <svg
-                            className="bd-placeholder-img rounded-circle"
-                            width="140"
-                            height="140"
-                            xmlns="http://www.w3.org/2000/svg"
-                            role="img"
-                            aria-label="Placeholder: 140x140"
-                            preserveAspectRatio="xMidYMid slice"
-                            focusable="false">
-                            <title>Placeholder</title>
-
-                            <rect width="100%" height="100%" fill="#777"/>
-
-                            <text x="50%" y="50%" fill="#777" dy=".3em">
-                                140x140
-                            </text>
-                        </svg>
-
-                        <h2>Ĺubomír Cverčko</h2>
-
-                        <p>Safalátka front-endová</p>
-                        <p>
-                            <a className="btn btn-secondary" href="#">
-                                View details &raquo;
-                            </a>
-                        </p>
+                    {/*LUBOMÍR*/}
+                    <div className="col text-center p-3">
+                        <img className="bd-placeholder-img rounded-circle m-3" width="200" height="200"
+                             src="/img/autors_imgs/lc.jpg"/>
+                        <h2 className="fs-3 mx-lg-2 text-center">Ľubomír Cverčko</h2>
+                        <div className="mx-lg-5">
+                            <button type="button" className="btn btn-outline-dark ">front-end</button>
+                        </div>
                     </div>
                     {/*MATÚŚ*/}
-                    <div className="col-lg-4">
-                        <svg
-                            className="bd-placeholder-img rounded-circle"
-                            width="140"
-                            height="140"
-                            xmlns="http://www.w3.org/2000/svg"
-                            role="img"
-                            aria-label="Placeholder: 140x140"
-                            preserveAspectRatio="xMidYMid slice"
-                            focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#777"/>
-                            <text x="50%" y="50%" fill="#777" dy=".3em">
-                                140x140
-                            </text>
-                        </svg>
-
-                        <h2>Matúš Šášik</h2>
-
-                        <p>NextJS</p>
-                        <p>
-                            <a className="btn btn-secondary" href="#">
-                                View details &raquo;
-                            </a>
-                        </p>
+                    <div className="col text-center p-3">
+                        <img className="bd-placeholder-img rounded-circle m-3" width="200" height="200"
+                             src="/img/autors_imgs/ms.jpg"/>
+                        <h2 className="fs-3 mx-lg-2 text-center">Matúš Šášik</h2>
+                        <div className="mx-lg-5">
+                            <button onClick="/pes" type="button" className="btn btn-outline-dark  ">NextJS</button>
+                        </div>
                     </div>
                 </div>
             </div>
