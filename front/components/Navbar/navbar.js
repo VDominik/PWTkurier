@@ -28,7 +28,7 @@ const Navbar = () => {
                             <a
                                 className="btn btn-outline-danger"
                                 data-toggle="collapse"
-                                href="/Admin/admin"
+                                href="/Admin"
                                 role="button"
                                 aria-expanded="false"
                                 aria-controls="collapseExample">
@@ -39,7 +39,7 @@ const Navbar = () => {
                             <a
                                 className="btn btn-outline-light"
                                 data-toggle="collapse"
-                                href="/Login/login"
+                                href="/Login"
                                 role="button"
                                 aria-expanded="false"
                                 aria-controls="collapseExample">

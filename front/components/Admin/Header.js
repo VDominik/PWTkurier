@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../../styles/Home.module.css";
-import Image from "../../public/img/Main_imgs_warehouse/c.jpg"
 
 function Header() {
 	return (
@@ -13,7 +12,7 @@ function Header() {
 					<p>Vitajte na nástenke</p>
 				</div>
 				<div className={styles.profile}>
-					<img src="/img/Main_imgs_warehouse/c.jpg" className={styles.image} />
+					<img src="/img/autors_imgs/bb.jpg" className={styles.image} />
 				</div>
 			</div>
 		</div>

@@ -9,6 +9,22 @@ use Illuminate\Routing\Controller;
 
 class UserController extends Controller{
 
+    public function login(\Illuminate\Http\Request $request)
+    {
+
+        if($request->input('name')=='cicik' && $request->input('description')=='cicik') {
+
+
+            return ['status' => 'success', 'msg' => "IDE TO"];
+        }
+        else{
+            return ['status' => 'failed', 'msg' => "najn"];
+        }
+
+    }
+
+
+
     public function showAllAction(){
         $users = User::all();
 
