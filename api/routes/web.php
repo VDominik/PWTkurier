@@ -18,7 +18,7 @@ Route::get('/api/user', [UserController::class, 'showAllAction']);
 
 Route::get('/api/user/{id}', [UserController::class, 'showAction']);
 
-Route::post('/api/login', [UserController::class, 'login']);
+Route::post('/api/login',  [UserController::class, 'login']);
 
 
 /*

@@ -3,24 +3,34 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use http\Env\Request;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
+//use http\Env\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\RedirectResponse;
+
+
 
 
 class UserController extends Controller{
 
-    public function login(\Illuminate\Http\Request $request)
+    public function login(Request $request )
     {
+        $firstname = $request->input('firstname');
+        $lastname = $request->input('lastname');
+        $email = $request->input('email');
+        $password = $request->input('password');
 
-        if($request->input('name')=='cicik' && $request->input('description')=='cicik') {
 
+        $user = new User();
+        $user->firstname = $firstname;
+        $user->lastname = $lastname;
+        $user->email = $email;
+        $user->password = $password;
+        $user->save();
 
-            return ['status' => 'success', 'msg' => "IDE TO"];
-        }
-        else{
-            return ['status' => 'failed', 'msg' => "najn"];
-        }
-
+        return ['msg' => "najs"];
     }
 
 
@@ -48,12 +58,14 @@ class UserController extends Controller{
         $firstname = $request->input('firstname');
         $lastname = $request->input('lastname');
         $email = $request->input('email');
+        $password = $request->input('password');
 
 
         $user = new User();
         $user->firstname = $firstname;
         $user->lastname = $lastname;
         $user->email = $email;
+        $user->password = $password;
         $user->save();
 
         return response()->view('adduser');

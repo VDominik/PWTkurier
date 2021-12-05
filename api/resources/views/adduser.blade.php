@@ -2,7 +2,7 @@
 
     ?>
 
-<form method="post" action="{{action('UserController@insertAction') }}">
+<form method="post" action="{}">
 
     Meno:<br>
     <input type="text" name="firstname" value="Dominik">
