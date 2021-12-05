@@ -4,8 +4,10 @@ import axios from 'axios';
 const Home = () => {
     //Zadefinovanie dát
     const [modifiedData, setModifiedData] = useState({
-        name: '',
-        description: '',
+        firstname: '',
+        lastname: '',
+        email: '',
+        password: '',
     });
     const [] = useState(null);
 
@@ -25,7 +27,6 @@ const Home = () => {
             const response = await axios.post('http://localhost:8000/api/login', modifiedData);
             console.log(response);
         } catch (error) {
-            setErrorRestaurants(error);
         }
     };
 
@@ -33,15 +34,25 @@ const Home = () => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <h3>Restaurants</h3>
+                <h3>Pridavanie do databazy</h3>
                 <br/>
                 <label>
-                    Name:
-                    <input type="text" name="name" value={modifiedData.name} onChange={handleChange}/>
+                    Firstname:
+                    <input type="text" name="firstname" value={modifiedData.firstname} onChange={handleChange}/>
                 </label>
                 <label>
-                    Description:
-                    <input type="text" name="description" value={modifiedData.description} onChange={handleChange}
+                    Lastname:
+                    <input type="text" name="lastname" value={modifiedData.lastname} onChange={handleChange}
+                    />
+                </label>
+                <label>
+                    Email:
+                    <input type="text" name="email" value={modifiedData.email} onChange={handleChange}
+                    />
+                </label>
+                <label>
+                    Pass:
+                    <input type="text" name="password" value={modifiedData.password} onChange={handleChange}
                     />
                 </label>
                 <br/>
