@@ -13,7 +13,7 @@ function Content() {
 				</div>
 				<div className={styles.tabs}>
 					<div className={styles.categories}>
-						<button>Prehliadať objednávky</button>
+						<a href="/Prehladavanie_objednavok"><button> Prehliadať objednávky</button></a>
 					</div>
 				</div>
 				<div className={styles.tabs}>
