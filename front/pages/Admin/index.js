@@ -7,11 +7,11 @@ import Content from "../../components/Admin/Content"
 
 const Admin = () => {
     return (
+
         <div className={styles.container}>
             <LeftNavbar />
             <Header />
             <Content />
-
         </div>
 
     );

@@ -52,6 +52,7 @@
 @media only screen and (max-width: 768px) {
     .navcontainer{
         width: 75px;
+        position: fixed;
     }
     .logo>h2{
         opacity: 0;
@@ -89,6 +90,7 @@
         align-items: center;
         background-color: #212529;
         width: 100%;
+        position: fixed;
     }
 
     .title{
@@ -136,6 +138,7 @@
     padding: 100px;
     gap:40px;
     justify-content:center;
+    margin-top: 120px;
 }
 .tabs{
     display: flex;

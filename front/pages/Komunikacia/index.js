@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import axios from 'axios';
 
+
+
 const Home = () => {
     //Zadefinovanie dát
     const [modifiedData, setModifiedData] = useState({
@@ -31,13 +33,13 @@ const Home = () => {
 
     //Formulár
     return (
-        <div>
+        <div >
             <form onSubmit={handleSubmit}>
-                <h3>Restaurants</h3>
+                <h1 >Restaurants</h1>
                 <br/>
-                <label>
+                <label >
                     Name:
-                    <input type="text" name="name" value={modifiedData.name} onChange={handleChange}/>
+                    <input  type="text" name="name" value={modifiedData.name} onChange={handleChange}/>
                 </label>
                 <label>
                     Description:
