@@ -9,5 +9,5 @@ class Objednavka extends Model
 {
     protected $table = 'objednavky';
 
-    protected $fillable = ['firstname', 'lastname', 'email', 'vaha'];
+    protected $fillable = ['firstname', 'lastname', 'email', 'vaha', 'krajina'];
 }

@@ -8,6 +8,8 @@ import { withRouter } from 'next/router';
 const axios = require('axios');
 
 const EditovanieWithRouter = (props) => {
+    const router = useRouter()
+    const test = handleSubmit(e)
 
     const [modifiedData, setModifiedData] = useState({
         id: '',
@@ -25,20 +27,35 @@ const EditovanieWithRouter = (props) => {
         }));
     };
 
-    const handleSubmit = async e => {
-        e.preventDefault();
+    const test = async  e=>{
+        console.log("pes");
+    }
 
-        try {
-            const response = await axios.post('http://localhost:8000/api/objednavka/update/7', modifiedData);
-            console.log(response);
-        } catch (error) {
-        }
+    const handleSubmit = async e => {
+
+
+        console.log("pes");
+
+        // e.preventDefault();
+        //
+        // try {
+        //     const response = await axios.post('http://localhost:8000/api/objednavka/update/7', modifiedData);
+        //     console.log(response);
+        // } catch (error) {
+        // }
     };
 
-    const router = useRouter()
-    return <Editovanie {...props} router={router} />
+    //spread operator ...
+    // let pole = [1,2,3];
+    // let pole2 = [4,5,6];
+    // let zlucene_pole = [...pole,...pole2];
+    return <Editovanie {...props} router={router} test={test} />
+
 }
 
+    // const Editovanie = (props) => {
+    //
+    // }
 
 export default withRouter (class Editovanie extends React.Component {
 
@@ -47,7 +64,8 @@ export default withRouter (class Editovanie extends React.Component {
         //super is used to access the variables
         super();
         this.state = {
-            loc: props.router,
+            loc: props.router.query.id,
+            submit: props.test,
             loaded: false,
             data: []
         }
@@ -56,7 +74,9 @@ export default withRouter (class Editovanie extends React.Component {
     ////Prijme dáta z daného linku
     componentDidMount() {
         //API request
-            axios.get("http://localhost:8000/api/objednavka/7").then(response => {
+        console.log("IDCKO: " + this.state.loc);
+        console.log("BUTTNON: " + this.state.submit);
+            axios.get("http://localhost:8000/api/objednavka/"+ this.state.loc).then(response => {
                 //getting and setting api data into variable
                 this.setState({data: response.data.objednavka});
                // console.log(response.data);
@@ -70,12 +90,12 @@ export default withRouter (class Editovanie extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={EditovanieWithRouter.handlesubmit}>
+                <form onSubmit={this.state.submit}>
                     <h3>Editovanie do databazy</h3>
                     <br/>
                     <label>
                         Firstname:
-                        <input type="text" name="firstname"  onChange={EditovanieWithRouter.handleChange}/>
+                        <input type="text" name="firstname" value={this.state.data.firstname} onChange={EditovanieWithRouter.handleChange}/>
                     </label>
                     <label>
                         Lastname:

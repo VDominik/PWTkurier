@@ -60,7 +60,7 @@ class Prehladavanie extends React.Component {
                     <tbody>
                     {this.state.data.map((result) => {
                             return (
-                                <tr>
+                                <tr key={result.id}>
                                     <td key="id">{result.id}</td>
                                     <td key="firstname">{result.firstname}</td>
                                     <td key="lastname">{result.lastname}</td>

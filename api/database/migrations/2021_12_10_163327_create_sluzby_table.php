@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateObjednavkyTable extends Migration
+class CreateSluzbyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateObjednavkyTable extends Migration
      */
     public function up()
     {
-        Schema::create('objednavky', function (Blueprint $table) {
+        Schema::create('sluzby', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('email')->unique();
             $table->float('vaha');
-            $table->string('krajina');
+            $table->string('SluzbaDo');
+            $table->string('SluzbaOd');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -32,6 +30,6 @@ class CreateObjednavkyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('objednavky');
+        Schema::dropIfExists('sluzby');
     }
 }
