@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Objednavka;
+use App\Models\Sluzby;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 //use http\Env\Request;
@@ -35,11 +37,25 @@ class ObjednavkaController extends Controller
     }
 
     public function insertAction(Request $request){
+        $sluzbySK_id = 1;
+        $sluzbaSK = Sluzby::find($sluzbySK_id);
+        response()->json(['sluzba'=>$sluzbaSK]);
+
+        $sluzbyEU_id = 2;
+        $sluzbaEU = Sluzby::find($sluzbyEU_id);
+        response()->json(['sluzba'=>$sluzbaEU]);
+
+        $sluzbySVET_id = 3;
+        $sluzbaSVET = Sluzby::find($sluzbySVET_id);
+        response()->json(['sluzba'=>$sluzbaSVET]);
+
+
 
         $firstname = $request->input('firstname');
         $lastname = $request->input('lastname');
         $email = $request->input('email');
         $vaha = $request->input('vaha');
+        $krajina = $request->input('krajina');
 
 
         $objednavka = new Objednavka();
@@ -47,9 +63,32 @@ class ObjednavkaController extends Controller
         $objednavka->lastname = $lastname;
         $objednavka->email = $email;
         $objednavka->vaha = $vaha;
+        $objednavka->krajina = $krajina;
         $objednavka->save();
 
 
+        if($vaha <= $sluzbaSK->vaha && $krajina == "SK") {
+            return ['msg' => $sluzbaSK->SluzbaDo];
+        }elseif ($vaha > $sluzbaSK->vaha && $krajina == "SK"){
+            return ['msg' => $sluzbaSK->SluzbaOd];
+
+
+        }elseif($vaha <= $sluzbaEU->vaha && $krajina == "EU") {
+            return ['msg' => $sluzbaEU->SluzbaDo];
+        }elseif($vaha > $sluzbaEU->vaha && $krajina == "EU") {
+            return ['msg' => $sluzbaEU->SluzbaOd];
+
+
+        }elseif($vaha <= $sluzbaSVET->vaha && $krajina == "SVET") {
+            return ['msg' => $sluzbaSVET->SluzbaDo];
+        }elseif($vaha > $sluzbaSVET->vaha && $krajina == "SVET") {
+            return ['msg' => $sluzbaSVET->SluzbaOd];
+        }
+
+
+
+
+        else { return ['msg' => "njebe?"];}
     }
 
     public function updateAction($id, Request $request){

@@ -10,6 +10,7 @@ const Home = () => {
         lastname: '',
         email: '',
         vaha: '',
+        krajina: '',
     });
     const [] = useState(null);
 
@@ -56,6 +57,11 @@ const Home = () => {
                     Vaha:
                     <input type="text" name="vaha" value={modifiedData.vaha} onChange={handleChange}
                     />kg
+                </label>
+                <label>
+                    Krajina:
+                    <input type="text" name="krajina" value={modifiedData.krajina} onChange={handleChange}
+                    />
                 </label>
                 <br/>
                 <button type="submit">Submit</button>

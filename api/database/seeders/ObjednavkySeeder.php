@@ -19,6 +19,7 @@ class ObjednavkySeeder extends Seeder
             'lastname' => "Testovy",
             'email' => "test@ukf.sk",
             'vaha' => "2.5",
+            'krajina' => "SK",
 
         ]);
     }
