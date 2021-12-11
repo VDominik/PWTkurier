@@ -54,6 +54,7 @@ class Prehladavanie extends React.Component {
                         <th>Lastname</th>
                         <th>Email</th>
                         <th>Vaha</th>
+                        <th>krajina</th>
                         <th>Akcie</th>
                     </tr>
                     </thead>
@@ -66,6 +67,7 @@ class Prehladavanie extends React.Component {
                                     <td key="lastname">{result.lastname}</td>
                                     <td key="email">{result.email}</td>
                                     <td key="vaha">{result.vaha}</td>
+                                    <td key="krajina">{result.krajina}</td>
                                     <td>
                                         {/*<Link to={"/Editovanie_objednavok/"+ result.id}><a>Edit</a></Link>*/}
                                         <Link href={{ pathname: '/Editovanie_objednavok/', query: { id: result.id }  }}><a>edit</a></Link>
