@@ -60,10 +60,10 @@ const Home = () => {
                 </label>
                 <label>
                     Krajina:
-                    <select id="krajina" name="krajina" value={modifiedData.krajina} onChange={handleChange}>
-                        <option value={modifiedData.krajina} name="sk" onSelect={handleChange} >SK</option>
-                        <option value={modifiedData.krajina} name="eu"  onSelect={handleChange}>EU</option>
-                        <option value={modifiedData.krajina} name="svet" onSelect={handleChange}>SVET</option>
+                    <select  name="krajina"  onChange={handleChange}>
+                        <option value="sk" onSelect={handleChange} >SK</option>
+                        <option value="eu"  onSelect={handleChange}>EU</option>
+                        <option value="svet" onSelect={handleChange}>SVET</option>
                     </select>
                 </label>
                 <br/>
