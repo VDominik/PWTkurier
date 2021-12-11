@@ -7,8 +7,6 @@ import { withRouter } from 'next/router';
 
 const axios = require('axios');
 
-
-
 const EditovanieWithRouter = (props) => {
     const router = useRouter()
 
@@ -43,12 +41,6 @@ const EditovanieWithRouter = (props) => {
     };
 
 
-
-
-
-
-
-
     //spread operator ...
     // let pole = [1,2,3];
     // let pole2 = [4,5,6];
@@ -60,14 +52,6 @@ const EditovanieWithRouter = (props) => {
     // const Editovanie = (props) => {
     //
     // }
-
-
-
-
-
-
-
-
 
 export default withRouter (class Editovanie extends React.Component {
 

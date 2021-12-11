@@ -7,6 +7,7 @@ use App\Http\Controllers\SluzbyController;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +20,10 @@ use App\Http\Controllers\SluzbyController;
 */
 
 Route::get('/api/user', [UserController::class, 'showAllAction']);
+
+Route::post('/api/login',  [UserController::class, 'login']);
+
+Route::post('/api/register',  [UserController::class, 'insertAction']);
 
 Route::get('/api/objednavky', [ObjednavkaController::class, 'showAllObjednavky']);
 
@@ -34,7 +39,6 @@ Route::get('/api/edit/{id}', [ObjednavkaController::class, 'updateAction']);
 
 Route::get('/api/user/{id}', [UserController::class, 'showAction']);
 
-Route::post('/api/login',  [UserController::class, 'login']);
 
 Route::post('/api/objednavka/update/{id}',[ObjednavkaController::class, 'updateAction']);
 

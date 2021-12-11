@@ -18,8 +18,8 @@ class UserSeeder extends Seeder
             'firstname' => "Test",
             'lastname' => "Testovy",
             'email' => "test@ukf.sk",
-            'password' => bcrypt('secret'),
+            'password' => "secret",
 
         ]);
-    }
+}
 }
