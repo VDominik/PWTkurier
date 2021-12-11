@@ -60,8 +60,11 @@ const Home = () => {
                 </label>
                 <label>
                     Krajina:
-                    <input type="text" name="krajina" value={modifiedData.krajina} onChange={handleChange}
-                    />
+                    <select id="krajina" name="krajina" value={modifiedData.krajina} onChange={handleChange}>
+                        <option value={modifiedData.krajina} name="sk" onSelect={handleChange} >SK</option>
+                        <option value={modifiedData.krajina} name="eu"  onSelect={handleChange}>EU</option>
+                        <option value={modifiedData.krajina} name="svet" onSelect={handleChange}>SVET</option>
+                    </select>
                 </label>
                 <br/>
                 <button type="submit">Submit</button>

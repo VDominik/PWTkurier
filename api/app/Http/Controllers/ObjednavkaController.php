@@ -97,10 +97,11 @@ class ObjednavkaController extends Controller
             'firstname' => $request->input('firstname'),
             'lastname' => $request->input('lastname'),
             'email' => $request->input('email'),
-            'vaha' => $request->input('vaha')
+            'vaha' => $request->input('vaha'),
+            'krajina' => $request->input('krajina'),
         ]);
 
-        return redirect()->action('');
+        return ['msg' => 'JO'];
 
     }
 

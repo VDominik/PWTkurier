@@ -10,13 +10,8 @@ const Admin = () => {
         <div className={styles.container}>
             <LeftNavbar />
             <Header />
-            <div className="position-absolute top-50 start-50 translate-middle">
-         <a href="/Admin/Uprava_pravidiel">
-             <button type="button" className="btn btn-dark" >Nastavenie paramterov</button>
-         </a>
+            <Content />
         </div>
-        </div>
-
     );
 };
 

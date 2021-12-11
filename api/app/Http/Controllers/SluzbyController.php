@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Sluzby;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -10,7 +11,7 @@ use Illuminate\Routing\Controller;
 
 
 
-class UserController extends Controller{
+class SluzbyController extends Controller{
 
     public function login(Request $request )
     {
@@ -33,10 +34,10 @@ class UserController extends Controller{
 
 
     public function showAllAction(){
-        $users = User::all();
+        $sluzby = Sluzby::all();
 
         return response()->json([
-            'users'=>$users
+            'sluzby'=>$sluzby
         ]);
     }
 
@@ -70,14 +71,14 @@ class UserController extends Controller{
     }
 
     public function updateAction($id, Request $request){
-        $user = User::where("id", "=", $id)->first();
-        $user->update([
-            'firstname' => $request->input('firstname'),
-            'lastname' => $request->input('lastname'),
-            'email' => $request->input('email'),
+        $sluzby = Sluzby::where("id", "=", $id)->first();
+        $sluzby->update([
+            'vaha' => $request->input('vaha'),
+            'SluzbaDo' => $request->input('SluzbaDo'),
+            'SluzbaOd' => $request->input('SluzbaOd'),
         ]);
 
-        return redirect()->action('UserController@showAllAction');
+        return ['msg' => 'JO'];
 
     }
 
