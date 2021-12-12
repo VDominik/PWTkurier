@@ -135,8 +135,12 @@ export default withRouter (class Editovanie extends React.Component {
                         <input type="text" name="vaha" placeholder={this.state.data.vaha} onChange={this.onChangeExpenseVaha}/>kg
                     </label>
                     <label>
-                        Vaha:
-                        <input type="text" name="krajina" placeholder={this.state.data.krajina} onChange={this.onChangeExpenseKrajina}/>
+                        Krajina:
+                        <select name="krajina"  onChange={this.onChangeExpenseKrajina}>
+                            <option value="SK">SK</option>
+                            <option value="EU">EU</option>
+                            <option value="SVET">SVET</option>
+                        </select>
                     </label>
                     <br/>
                     <button type="submit">Submit</button>
