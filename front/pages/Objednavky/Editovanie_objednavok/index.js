@@ -1,8 +1,10 @@
-import React from 'react'
-import Link from 'next/link';
+import LeftNavbar from "../../../components/User/LeftNavbar";
+import Header from "../../../components/User/Header";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useState} from 'react';
 import { withRouter } from 'next/router';
+import {useState} from 'react';
+import Link from 'next/link';
+import React from 'react'
 
 const axios = require('axios');
 
@@ -29,6 +31,7 @@ export default withRouter (class Editovanie extends React.Component {
 
         this.state = {
             loc: props.router.query.id,
+            router: props.router,
             submit: props.test,
             loaded: false,
             data: [],
@@ -73,6 +76,7 @@ export default withRouter (class Editovanie extends React.Component {
         onSubmit(e) {
             e.preventDefault()
             console.log(this.state.loc);
+
             const expense = {
                 firstname: this.state.firstname,
                 lastname: this.state.lastname,
@@ -83,7 +87,17 @@ export default withRouter (class Editovanie extends React.Component {
 
             //Odošle dáta na danú url - API
             axios.post('http://localhost:8000/api/objednavka/update/' + this.state.loc, expense)
-                .then(res => console.log(res.data));
+                .then((res) => {
+                    let response = res.data;
+                    if (response['success']) {
+                        console.log("Login Successful");
+                        this.state.router.push('/User');
+                        alert("Vaša objednávka bola úspešne upravená, bude použítá kruierská služba: " + response.msg);
+                    } else {
+                        alert("Niekde nastala chyba, prosím skúste to znovu!");
+                    }
+                }
+            );
 
             this.setState({
                 firstname: '',
@@ -97,6 +111,9 @@ export default withRouter (class Editovanie extends React.Component {
     //Zobrazenie dát z databázy
     render() {
         return (
+            <>
+            <LeftNavbar/>
+              <Header/>
             <div className="position-absolute top-50 start-50 translate-middle">
                 <form onSubmit={this.onSubmit}>
                     <h3>Editovanie do databazy</h3>
@@ -125,6 +142,7 @@ export default withRouter (class Editovanie extends React.Component {
                     <button type="submit">Submit</button>
                 </form>
             </div>
+            </>
         )
     }
 }
