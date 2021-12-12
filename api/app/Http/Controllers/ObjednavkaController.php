@@ -71,10 +71,22 @@ class ObjednavkaController extends Controller
         }elseif($vaha > $sluzbaSVET->vaha && $krajina == "SVET") {
             return ['success' => true, 'msg' => $sluzbaSVET->SluzbaOd];
         }
-        else { return ['msg' => "njebe?"];}
+        else { return ['msg' => "error"];}
     }
 
     public function updateAction($id, Request $request){
+        $sluzbySK_id = 1;
+        $sluzbaSK = Sluzby::find($sluzbySK_id);
+        response()->json(['sluzba'=>$sluzbaSK]);
+
+        $sluzbyEU_id = 2;
+        $sluzbaEU = Sluzby::find($sluzbyEU_id);
+        response()->json(['sluzba'=>$sluzbaEU]);
+
+        $sluzbySVET_id = 3;
+        $sluzbaSVET = Sluzby::find($sluzbySVET_id);
+        response()->json(['sluzba'=>$sluzbaSVET]);
+
         $objednavka = Objednavka::where("id", "=", $id)->first();
         $objednavka->update([
             'firstname' => $request->input('firstname'),
@@ -84,7 +96,22 @@ class ObjednavkaController extends Controller
             'krajina' => $request->input('krajina'),
         ]);
 
-        return ['msg' => 'JO'];
+        if($request->vaha <= $sluzbaSK->vaha && $request->krajina == "SK") {
+            return ['success' => true, 'msg' => $sluzbaSK->SluzbaDo];
+        }elseif ($request->vaha > $sluzbaSK->vaha && $request->krajina == "SK"){
+            return ['success' => true, 'msg' => $sluzbaSK->SluzbaOd];
+
+        }elseif($request->vaha <= $sluzbaEU->vaha && $request->krajina == "EU") {
+            return ['success' => true, 'msg' => $sluzbaEU->SluzbaDo];
+        }elseif($request->vaha > $sluzbaEU->vaha && $request->krajina == "EU") {
+            return ['success' => true, 'msg' => $sluzbaEU->SluzbaOd];
+
+        }elseif($request->vaha <= $sluzbaSVET->vaha && $request->krajina == "SVET") {
+            return ['success' => true, 'msg' => $sluzbaSVET->SluzbaDo];
+        }elseif($request->vaha > $sluzbaSVET->vaha && $request->krajina == "SVET") {
+            return ['success' => true, 'msg' => $sluzbaSVET->SluzbaOd];
+        }
+        else { return ['msg' => "error"];}
 
     }
 

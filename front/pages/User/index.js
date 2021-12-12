@@ -73,11 +73,11 @@ class User extends React.Component {
                                         <td key="vaha">{result.vaha}</td>
                                         <td key="krajina">{result.krajina}</td>
                                         <td>
-                                            {/*<button type="button" class="btn btn-outline-secondary">*/}
-                                            {/*    <Link href={{*/}
-                                            {/*        pathname: 'Objednavky/Editovanie_objednavok/',*/}
-                                            {/*        query: {id: result.id}*/}
-                                            {/*    }}><a>edit</a></Link></button>*/}
+                                            <button type="button" class="btn btn-outline-secondary">
+                                                <Link className="text-decoration-none" href={{
+                                                    pathname: 'Objednavky/Editovanie_objednavok/',
+                                                    query: {id: result.id}
+                                                }}><a>edit</a></Link></button>
                                             <button type="button"
                                                     className="btn btn-outline-secondary text-decoration-none"
                                                     onClick={() => this.deleteObjednavka(result.id)}>Delete
