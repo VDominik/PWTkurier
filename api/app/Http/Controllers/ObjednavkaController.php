@@ -6,14 +6,7 @@ use App\Models\User;
 use App\Models\Objednavka;
 use App\Models\Sluzby;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Redirector;
-//use http\Env\Request;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Http\RedirectResponse;
-
-
-
 
 class ObjednavkaController extends Controller
 {
@@ -49,14 +42,11 @@ class ObjednavkaController extends Controller
         $sluzbaSVET = Sluzby::find($sluzbySVET_id);
         response()->json(['sluzba'=>$sluzbaSVET]);
 
-
-
         $firstname = $request->input('firstname');
         $lastname = $request->input('lastname');
         $email = $request->input('email');
         $vaha = $request->input('vaha');
         $krajina = $request->input('krajina');
-
 
         $objednavka = new Objednavka();
         $objednavka->firstname = $firstname;
@@ -66,28 +56,21 @@ class ObjednavkaController extends Controller
         $objednavka->krajina = $krajina;
         $objednavka->save();
 
-
         if($vaha <= $sluzbaSK->vaha && $krajina == "SK") {
-            return ['msg' => $sluzbaSK->SluzbaDo];
+            return ['success' => true, 'msg' => $sluzbaSK->SluzbaDo];
         }elseif ($vaha > $sluzbaSK->vaha && $krajina == "SK"){
-            return ['msg' => $sluzbaSK->SluzbaOd];
-
+            return ['success' => true, 'msg' => $sluzbaSK->SluzbaOd];
 
         }elseif($vaha <= $sluzbaEU->vaha && $krajina == "EU") {
-            return ['msg' => $sluzbaEU->SluzbaDo];
+            return ['success' => true, 'msg' => $sluzbaEU->SluzbaDo];
         }elseif($vaha > $sluzbaEU->vaha && $krajina == "EU") {
-            return ['msg' => $sluzbaEU->SluzbaOd];
-
+            return ['success' => true, 'msg' => $sluzbaEU->SluzbaOd];
 
         }elseif($vaha <= $sluzbaSVET->vaha && $krajina == "SVET") {
-            return ['msg' => $sluzbaSVET->SluzbaDo];
+            return ['success' => true, 'msg' => $sluzbaSVET->SluzbaDo];
         }elseif($vaha > $sluzbaSVET->vaha && $krajina == "SVET") {
-            return ['msg' => $sluzbaSVET->SluzbaOd];
+            return ['success' => true, 'msg' => $sluzbaSVET->SluzbaOd];
         }
-
-
-
-
         else { return ['msg' => "njebe?"];}
     }
 

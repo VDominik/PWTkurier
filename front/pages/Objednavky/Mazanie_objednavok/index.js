@@ -1,6 +1,6 @@
-import React from "react";
 import { Button } from "react-bootstrap";
 import Link from 'next/link'
+import React from "react";
 import axios from "axios";
 
 const StudentTableRow = (props) => {
@@ -12,11 +12,11 @@ const StudentTableRow = (props) => {
                 "http://localhost:8000/api/Vymazanie/" +   id)
             .then((res) => {
                 if (res.status === 200) {
-                    alert("Student successfully deleted");
+                    alert("Vaša objednávka bola úspešne vymazaná!");
                     window.location.reload();
                 } else Promise.reject();
             })
-            .catch((err) => alert("Something went wrong"));
+            .catch((err) => alert("Niekde nastala chyba!"));
     };
 
     return (

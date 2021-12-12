@@ -16,18 +16,18 @@ class SluzbySeeder extends Seeder
     {
         DB::table('sluzby')->insert([
             'vaha' => "4",
-            'SluzbaDo' => "DHLSK",
-            'SluzbaOd' => "DPDSK",
+            'SluzbaDo' => "DHL",
+            'SluzbaOd' => "DPD",
         ]);
         DB::table('sluzby')->insert([
             'vaha' => "4",
-            'SluzbaDo' => "DHLEU",
-            'SluzbaOd' => "DPDEU",
+            'SluzbaDo' => "DHL",
+            'SluzbaOd' => "DPD",
         ]);
         DB::table('sluzby')->insert([
             'vaha' => "4",
-            'SluzbaDo' => "UPSSVET",
-            'SluzbaOd' => "FEDEXSVET",
+            'SluzbaDo' => "UPS",
+            'SluzbaOd' => "FEDEX",
         ]);
     }
 }

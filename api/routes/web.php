@@ -5,9 +5,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ObjednavkaController;
 use App\Http\Controllers\SluzbyController;
 
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,38 +16,29 @@ use App\Http\Controllers\SluzbyController;
 |
 */
 
-Route::get('/api/user', [UserController::class, 'showAllAction']);
+//USER
+Route::post('/api/register',  [UserController::class, 'insertAction']);
 
 Route::post('/api/login',  [UserController::class, 'login']);
 
-Route::post('/api/register',  [UserController::class, 'insertAction']);
 
-Route::get('/api/objednavky', [ObjednavkaController::class, 'showAllObjednavky']);
-
-Route::get('/api/sluzby', [SluzbyController::class, 'showAllAction']);
-
-Route::get('/api/objednavka/{id}', [ObjednavkaController::class, 'showObjednavka']);
-
-Route::post('/api/Vytvorenie', [ObjednavkaController::class, 'insertAction']);
+//OBJEDNAVKY
+Route::post('/api/objednavka/update/{id}',[ObjednavkaController::class, 'updateAction']);
 
 Route::delete('/api/Vymazanie/{id}', [ObjednavkaController::class, 'deleteAction']);
 
-Route::get('/api/edit/{id}', [ObjednavkaController::class, 'updateAction']);
+Route::get('/api/objednavky', [ObjednavkaController::class, 'showAllObjednavky']);
 
-Route::get('/api/user/{id}', [UserController::class, 'showAction']);
+Route::post('/api/Vytvorenie', [ObjednavkaController::class, 'insertAction']);
+
+Route::get('/api/objednavka/{id}', [ObjednavkaController::class, 'showObjednavka']);
 
 
-Route::post('/api/objednavka/update/{id}',[ObjednavkaController::class, 'updateAction']);
-
+//SLUZBY
 Route::post('/api/sluzby/update/{id}',[SluzbyController::class, 'updateAction']);
 
-/*
-Route::post('/api/user/insert',[
-    'as' => 'insert', 'uses' => 'UserController@insertAction'
-]);
+Route::get('/api/sluzby', [SluzbyController::class, 'showAllAction']);
 
 
 
-Route::delete('/api/user/delete/{id}',[
-    'as' => 'delete', 'uses' => 'UserController@deleteAction'
-]); */
+

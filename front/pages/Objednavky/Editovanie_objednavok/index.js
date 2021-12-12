@@ -4,62 +4,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from 'react';
 import { withRouter } from 'next/router';
 
-
 const axios = require('axios');
 
 const EditovanieWithRouter = (props) => {
     const router = useRouter()
 
-
-    const [modifiedData, setModifiedData] = useState({
-        id: '',
-        firstname: '',
-        lastname: '',
-        email: '',
-        vaha: '',
-    });
-    const [] = useState(null);
-
-    const handleChange = ({target: {name, value}}) => {
-        setModifiedData(prev => ({
-            ...prev,
-            [name]: value,
-        }));
-    };
-
-
-    const handleSubmit = async e => {
-
-
-        e.preventDefault();
-
-        try {
-            const response = await axios.post('http://localhost:8000/api/objednavka/update/7', modifiedData);
-            console.log(response);
-        } catch (error) {
-        }
-    };
-
-
     //spread operator ...
-    // let pole = [1,2,3];
-    // let pole2 = [4,5,6];
-    // let zlucene_pole = [...pole,...pole2];
     return <Editovanie {...props} router={router} handleSubmit={handleSubmit} />
-
-}
-
-    // const Editovanie = (props) => {
-    //
-    // }
+    };
 
 export default withRouter (class Editovanie extends React.Component {
 
-
-
     //Zadefinovanie dát
     constructor(props) {
-        //super is used to access the variables
+        //použitie super na prístup ku premenným
         super(props);
 
         this.onChangeExpenseName = this.onChangeExpenseName.bind(this);
@@ -74,34 +32,24 @@ export default withRouter (class Editovanie extends React.Component {
             submit: props.test,
             loaded: false,
             data: [],
-            modi: ['pes'],
             firstname: '',
             lastname: '',
             email: '',
             vaha: '',
             krajina: '',
-
         }
-
-
     }
 
-    ////Prijme dáta z daného linku
+        //Prijme dáta z danej url
     componentDidMount() {
-        //API request
-        // console.log("IDCKO: " + this.state.loc);
-        // console.log("BUTTNON: " + );
+        //Request na API
             axios.get("http://localhost:8000/api/objednavka/"+ this.state.loc).then(response => {
-                //getting and setting api data into variable
+                //získa data z api a vloží ich do premenných
                 this.setState({data: response.data.objednavka});
-               // console.log(response.data);
             })
         }
 
-
         onChangeExpenseName(e)  {
-        console.log(e.target.value);
-            console.log(this.state.firstname);
             this.setState({firstname: e.target.value})
         }
 
@@ -116,11 +64,12 @@ export default withRouter (class Editovanie extends React.Component {
         onChangeExpenseVaha(e) {
             this.setState({vaha: e.target.value})
         }
+
         onChangeExpenseKrajina(e) {
             this.setState({krajina: e.target.value})
         }
 
-
+        //Ked sa vykoná stlačenie tlačidla
         onSubmit(e) {
             e.preventDefault()
             console.log(this.state.loc);
@@ -131,24 +80,24 @@ export default withRouter (class Editovanie extends React.Component {
                 vaha: this.state.vaha,
                 krajina: this.state.krajina
             };
+
+            //Odošle dáta na danú url - API
             axios.post('http://localhost:8000/api/objednavka/update/' + this.state.loc, expense)
                 .then(res => console.log(res.data));
-            // console.log(`Expense successfully created!`);
-            // console.log(`Name: ${this.state.name}`);
-            // console.log(`Amount: ${this.state.amount}`);
-            // console.log(`Description: ${this.state.description}`);
 
-            this.setState({firstname: '', lastname: '', email: '', vaha: '', krajina: ''})
+            this.setState({
+                firstname: '',
+                lastname: '',
+                email: '',
+                vaha: '',
+                krajina: ''
+            })
         }
-
 
     //Zobrazenie dát z databázy
     render() {
-
-
-
         return (
-            <div>
+            <div className="position-absolute top-50 start-50 translate-middle">
                 <form onSubmit={this.onSubmit}>
                     <h3>Editovanie do databazy</h3>
                     <br/>
@@ -179,7 +128,6 @@ export default withRouter (class Editovanie extends React.Component {
         )
     }
 }
-
 )
 
 

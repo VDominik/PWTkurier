@@ -7,7 +7,7 @@ function Header() {
 			<div className={styles.headwrapper}>
 				<div className={styles.title}>
 					<h2>
-						Ahoj, <span>Admin</span>
+						Ahoj, <span>User</span>
 					</h2>
 					<p>Vitajte na nástenke</p>
 				</div>

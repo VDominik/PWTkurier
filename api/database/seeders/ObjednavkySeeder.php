@@ -15,12 +15,26 @@ class ObjednavkySeeder extends Seeder
     public function run()
     {
         DB::table('objednavky')->insert([
-            'firstname' => "Test",
-            'lastname' => "Testovy",
-            'email' => "test@ukf.sk",
+            'firstname' => "Miso",
+            'lastname' => "Hric",
+            'email' => "slovak@ukf.sk",
             'vaha' => "2.5",
             'krajina' => "SK",
+        ]);
 
+        DB::table('objednavky')->insert([
+            'firstname' => "Vlado",
+            'lastname' => "Petrow",
+            'email' => "europan@ukf.sk",
+            'vaha' => "4",
+            'krajina' => "EU",
+        ]);
+        DB::table('objednavky')->insert([
+            'firstname' => "Mike",
+            'lastname' => "Donald",
+            'email' => "american@ukf.sk",
+            'vaha' => "10",
+            'krajina' => "SVET",
         ]);
     }
 }

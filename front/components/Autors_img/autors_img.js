@@ -17,7 +17,7 @@ const Navbar = () => {
                              src="/img/autors_imgs/dv.jpg"/>
                         <h2 className="fs-3 text-center">Dominik Václav</h2>
                         <div className="mx-lg-4">
-                            <button type="button" className="btn btn-outline-dark ">Vedúci projektu</button>
+                            <button type="button" className="btn btn-outline-dark ">Back-end</button>
                         </div>
                     </div>
                     {/*DÁVID*/}
@@ -27,7 +27,7 @@ const Navbar = () => {
 
                         <h2 className="fs-3 mx-lg-3 text-center">Dávid Galaba</h2>
                         <div className="mx-lg-5">
-                            <button type="button" className="btn btn-outline-dark ">Back-end</button>
+                            <button type="button" className="btn btn-outline-dark ">Front-end</button>
                         </div>
                     </div>
                     {/*BRANIS*/}
@@ -36,7 +36,7 @@ const Navbar = () => {
                              src="/img/autors_imgs/bb.jpg"/>
                         <h2 className="fs-3 mx-lg-2 text-center">Braňo Bohunický</h2>
                         <div className="mx-lg-5">
-                            <button type="button" className="btn btn-outline-dark ">Dizajnér</button>
+                            <button type="button" className="btn btn-outline-dark ">Front-end</button>
                         </div>
                     </div>
                     {/*LUBOMÍR*/}
@@ -45,7 +45,7 @@ const Navbar = () => {
                              src="/img/autors_imgs/lc.jpg"/>
                         <h2 className="fs-3 mx-lg-2 text-center">Ľubomír Cverčko</h2>
                         <div className="mx-lg-5">
-                            <button type="button" className="btn btn-outline-dark ">front-end</button>
+                            <button type="button" className="btn btn-outline-dark ">Front-end</button>
                         </div>
                     </div>
                     {/*MATÚŚ*/}
@@ -54,7 +54,7 @@ const Navbar = () => {
                              src="/img/autors_imgs/ms.jpg"/>
                         <h2 className="fs-3 mx-lg-2 text-center">Matúš Šášik</h2>
                         <div className="mx-lg-5">
-                            <button onClick="/pes" type="button" className="btn btn-outline-dark  ">NextJS</button>
+                            <button onClick="/pes" type="button" className="btn btn-outline-dark">Back-end</button>
                         </div>
                     </div>
                 </div>
