@@ -17,6 +17,7 @@ const EditovanieWithRouter = (props) => {
 
 export default withRouter (class Editovanie extends React.Component {
 
+
     //Zadefinovanie dát
     constructor(props) {
         //použitie super na prístup ku premenným
@@ -29,6 +30,8 @@ export default withRouter (class Editovanie extends React.Component {
         this.onChangeExpenseKrajina = this.onChangeExpenseKrajina.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
+
+
         this.state = {
             loc: props.router.query.id,
             router: props.router,
@@ -39,7 +42,7 @@ export default withRouter (class Editovanie extends React.Component {
             lastname: '',
             email: '',
             vaha: '',
-            krajina: '',
+            krajina:'SK',
         }
     }
 
@@ -135,8 +138,18 @@ export default withRouter (class Editovanie extends React.Component {
                         <input type="text" name="vaha" placeholder={this.state.data.vaha} onChange={this.onChangeExpenseVaha}/>kg
                     </label>
                     <label>
-                        Vaha:
-                        <input type="text" name="krajina" placeholder={this.state.data.krajina} onChange={this.onChangeExpenseKrajina}/>
+
+
+
+                        Krajina:
+
+                        <select name="krajina"  onChange={this.onChangeExpenseKrajina}>
+                            <option value="SK"  >SK</option>
+                            <option value="EU"  >EU</option>
+                            <option value="SVET" >SVET</option>
+                        </select>
+
+                        {/*<input type="text" name="krajina" placeholder={this.state.data.krajina} onChange={this.onChangeExpenseKrajina}/>*/}
                     </label>
                     <br/>
                     <button type="submit">Submit</button>
