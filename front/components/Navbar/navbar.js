@@ -24,28 +24,6 @@ const Navbar = () => {
                     {/*ADMIN A LOGIN*/}
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <ul className="navbar-nav me-auto mb-2 mb-md-0"></ul>
-                        <div className="mx-lg-3">
-                            <a
-                                className="btn btn-outline-success"
-                                data-toggle="collapse"
-                                href="/User"
-                                role="button"
-                                aria-expanded="false"
-                                aria-controls="collapseExample">
-                                User
-                            </a>
-                        </div>
-                        <div className="mx-lg-3">
-                            <a
-                                className="btn btn-outline-danger"
-                                data-toggle="collapse"
-                                href="/Admin"
-                                role="button"
-                                aria-expanded="false"
-                                aria-controls="collapseExample">
-                                ADMIN
-                            </a>
-                        </div>
                         <div className="mx-lg-1">
                             <a
                                 className="btn btn-outline-light"

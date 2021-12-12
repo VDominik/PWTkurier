@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles/Home.module.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faSignOutAlt} from "@fortawesome/free-solid-svg-icons";
+import {faBookOpen, faHeart, faSignOutAlt,} from "@fortawesome/free-solid-svg-icons";
 
 function LeftNavbar() {
     return (
@@ -11,7 +11,21 @@ function LeftNavbar() {
             </div>
             <div className={styles.wrapper}>
                 <ul>
-                <li>
+                    <li>
+                        <FontAwesomeIcon
+                            icon={faHeart}
+                            style={{width: "18px", cursor: "pointer"}}
+                        />{" "}
+                        <a href="/User">Objednavky</a>
+                    </li>
+                    <li>
+                        <FontAwesomeIcon
+                            icon={faBookOpen}
+                            style={{width: "18px", cursor: "pointer"}}
+                        />{" "}
+                        <a href="/Objednavky/Vytvorenie_objednavky">Vytvorit Objednavku</a>
+                    </li>
+                    <li>
                         <FontAwesomeIcon
                             icon={faSignOutAlt}
                             style={{width: "18px", cursor: "pointer"}}
@@ -21,7 +35,7 @@ function LeftNavbar() {
                 </ul>
             </div>
         </div>
-    );
+    )
 }
 
 export default LeftNavbar;

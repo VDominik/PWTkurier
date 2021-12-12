@@ -1,155 +1,173 @@
-.navcontainer{
+.navcontainer {
     position: fixed;
-    width:200px;
-    height:100%;
+    width: 200px;
+    height: 100%;
     background-color: #212529;
 
 }
 
-.wrapper{
-    padding:10px;
+.wrapper {
+    padding: 10px;
     z-index: 1;
     color: white;
 }
-.logo{
-    padding:10px;
+
+.logo {
+    padding: 10px;
     padding-left: 20px;
-    text-align:left;
+    text-align: left;
     font-size: 20px;
     font-weight: bold;
     color: white;
 }
-.wrapper >ul{
-    margin-top:20px;
+
+.wrapper > ul {
+    margin-top: 20px;
     text-align: left;
     padding-left: 10px;
     display: flex;
-    gap:25px;
+    gap: 25px;
     flex-direction: column;
     font-size: 18px;
     font-weight: bold;
 }
 
-.wrapper>ul>li{
+.wrapper > ul > li {
     list-style: none;
     font-size: 20px;
     text-decoration: none;
     opacity: .6;
 }
-.wrapper>ul>li:active{
+
+.wrapper > ul > li:active {
     color: rgb(9, 112, 72);
 }
-.wrapper>ul>li>a {
+
+.wrapper > ul > li > a {
     color: white;
     text-decoration: none;
 }
-.wrapper>ul>li>a:hover{
+
+.wrapper > ul > li > a:hover {
     color: rgb(9, 112, 72);
     font-size: 22px;
     transition: 0.2s;
 }
 
 @media only screen and (max-width: 768px) {
-    .navcontainer{
+    .navcontainer {
         width: 75px;
     }
-    .logo>h2{
+
+    .logo > h2 {
         opacity: 0;
     }
-    .logo{
+
+    .logo {
         background: url('../public/vercel.svg');
         width: 40px;
         height: 40px;
-        padding:10px;
+        padding: 10px;
         margin: 10px;
     }
 
-    .wrapper>ul{
-        gap:5px;
+    .wrapper > ul {
+        gap: 5px;
     }
-    .wrapper>ul>li:hover{
+
+    .wrapper > ul > li:hover {
         color: #000000;
     }
-    .wrapper>ul>li>a{
+
+    .wrapper > ul > li > a {
         opacity: 0;
     }
 }
 
-    .headcontainer{
-        display: flex;
-        flex-wrap: wrap;
-        background-color: rgb(255, 255, 255);
-        margin-left:200px;
+.headcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(255, 255, 255);
+    margin-left: 200px;
 
 
-    }
-    .headwrapper{
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        background-color: #212529;
+}
+
+.headwrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #212529;
+    width: 100%;
+}
+
+.title {
+    margin-left: 40px;
+}
+
+.title > h2 {
+    color: rgb(255, 255, 255);;
+}
+
+.title > p {
+    color: rgb(255, 255, 255);;
+}
+
+.title > h2 > span {
+    color: rgb(9, 112, 72);
+}
+
+.profile {
+    position: absolute;
+    right: 20px;
+}
+
+.image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .headcontainer {
         width: 100%;
+        margin-left: 70px;
     }
 
-    .title{
-        margin-left: 40px;
-    }
-    .title>h2{
-        color: rgb(255, 255, 255);;
-    }
-    .title>p{
-        color: rgb(255, 255, 255);;
-    }
-    .title>h2>span{
-        color:rgb(9, 112, 72);
-    }
-    .profile{
+    .profile {
         position: absolute;
-        right:20px;
-    }
-    .image{
-        width: 40px;
-        height:40px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-    @media only screen and (max-width: 768px) {
-        /* For mobile phones: */
-        .headcontainer{
-            width: 100%;
-            margin-left: 70px;
-        }
-        .profile{
-            position: absolute;
-            right:0px;
-        }
-
+        right: 0px;
     }
 
-.contentcontainer{
+}
+
+.contentcontainer {
     flex-wrap: wrap;
     margin-left: 200px;
 }
 
-.contentwrapper{
+.contentwrapper {
     display: flex;
     padding: 100px;
-    gap:40px;
-    justify-content:center;
+    gap: 40px;
+    justify-content: center;
 }
-.tabs{
+
+.tabs {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width:250px;
-    height:110px;
+    width: 250px;
+    height: 110px;
     background-color: #fff;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 3px 0px 6px 0px rgba(246, 246, 246, 0.75);
 }
 
-.categories>button{
+.categories > button {
     color: rgb(255, 255, 255);
     background: #212529;
     text-align: center;
@@ -161,18 +179,19 @@
 }
 
 
-
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
-    .contentcontainer{
+    .contentcontainer {
         margin-left: 70px;
 
     }
-    .contentwrapper{
+
+    .contentwrapper {
         display: grid;
         grid-template-columns: 1fr;
     }
-    .tabs{
+
+    .tabs {
         width: 350px;
     }
 

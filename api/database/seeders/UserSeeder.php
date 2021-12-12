@@ -18,8 +18,21 @@ class UserSeeder extends Seeder
             'firstname' => "Test",
             'lastname' => "Testovy",
             'email' => "test@ukf.sk",
-            'password' => "secret",
+            'password' => "test",
+        ]);
 
+        DB::table('users')->insert([
+            'firstname' => "user",
+            'lastname' => "user",
+            'email' => "user",
+            'password' => "user",
+        ]);
+
+        DB::table('users')->insert([
+            'firstname' => "admin",
+            'lastname' => "admin",
+            'email' => "admin",
+            'password' => "admin",
         ]);
 }
 }
