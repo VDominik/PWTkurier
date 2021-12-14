@@ -1,8 +1,8 @@
 import Navbar from "../../components/Navbar/navbar";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {useRouter} from 'next/router';
 import React, {useState} from 'react'
 import axios from 'axios';
+import styles from "../../styles/Login.module.css";
 
 export default function login() {
     const router = useRouter();
@@ -44,29 +44,42 @@ export default function login() {
 
     return (
         <>
-            <Navbar/>
-            <div className="position-absolute top-50 start-50 translate-middle">
-                <div>
-                    <form onSubmit={(e) => handleSubmit(e)} action="" method="post">
-                        <div>
-                            <label htmlFor="">Username</label><br/>
-                            <input onInput={(e) => setUsername(e.target.value)} type="text" id="username"
-                                   value={username}/>
-                        </div>
-                        <div>
-                            <label htmlFor="">Password</label><br/>
-                            <input onInput={(e) => setPassword(e.target.value)} type="password" id="password"
-                                   value={password}/>
-                        </div>
-                        <div>
-                            <input class="btn btn-outline-secondary" type="submit" value="Login"/>
-                            <a className="btn btn-outline-secondary" data-toggle="collapse" href="/Register"
-                               role="button">
-                                Zaregistruj sa</a>
-                        </div>
-                    </form>
 
-                </div>
+            <Navbar/>
+            <div>
+                <div className={styles.groundmain}>
+
+                    <form className={styles.wrapperr} onSubmit={(e) => handleSubmit(e)} action="" method="post">
+
+                        <div className={styles.title}>
+                            <h1 >Prihlásenie</h1>
+                        </div>
+
+                            <div className={styles.form}>
+
+                                <label className={styles.inputfield}>
+                                    <img className={styles.iconuser} src='https://i.pinimg.com/originals/0c/3b/3a/0c3b3adb1a7530892e55ef36d3be6cb8.png'/>
+                                    <br/>
+                                    <input className={styles.input} onInput={(e) => setUsername(e.target.value)} type="text" id="username"
+                                       value={username}/>
+                                </label>
+
+                                <label className={styles.inputfield} htmlFor="">
+                                    <img className={styles.iconpw} src='https://icons-for-free.com/iconfiles/png/512/lock+password+protect+safety+security+icon-1320086045132546966.png'/>
+                                    <br/>
+                                <input className={styles.input} onInput={(e) => setPassword(e.target.value)} type="password" id="password"
+                                       value={password}/>
+                                </label>
+
+                                        <div className={styles.inputfield}>
+                                            <input className={styles.btn} type="submit" value="Prihlásiť"/>
+
+                                            <a className={styles.btn} data-toggle="collapse" href="/Register" role="button">
+                                                Registrovať</a>
+                                        </div>
+                            </div>
+                    </form>
+            </div>
             </div>
         </>
     )
