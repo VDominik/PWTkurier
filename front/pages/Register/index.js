@@ -1,8 +1,8 @@
 import Navbar from "../../components/Navbar/navbar";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {useRouter} from 'next/router';
 import {useState} from 'react';
 import axios from 'axios';
+import styles from "../../styles/Register.module.css";
 
 export default function register() {
 
@@ -40,25 +40,46 @@ export default function register() {
 
     return (<>
         <Navbar/>
-        <div className="position-absolute top-50 start-50 translate-middle">
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <h1>Registrácia</h1>
-                    <label><b>Meno</b></label>
-                    <input name="firstname" name="firstname" onChange={handleChange}></input>
+                <div>
+                    <div className={styles.groundmain}>
 
-                    <label><b>Priezvisko</b></label>
-                    <input name="lastname" name="lastname" onChange={handleChange}></input>
+                                    <form className={styles.wrapperr} onSubmit={handleSubmit}>
+                                        <div className={styles.title}>
+                                        <h1>Registrácia</h1>
+                                        </div>
 
-                    <label> <b>Email</b></label>
-                    <input type="text" name="email" onChange={handleChange}></input>
+                                        <div className={styles.form}>
+                                            <label className={styles.inputfield}><b>Meno</b>
+                                            <input className={styles.input} name="firstname" name="firstname" onChange={handleChange}></input>
+                                            </label>
 
-                    <label> <b>Heslo</b> </label>
-                    <input type="password" name="password" onChange={handleChange}></input>
+                                            <label className={styles.inputfield}><b>Priezvisko</b>
+                                            <input className={styles.input} name="lastname" name="lastname" onChange={handleChange}></input>
+                                            </label>
 
-                    <button type="submit">Registrovať sa</button>
-                </form>
-            </div>
-        </div>
+
+                                            <label className={styles.inputfield}> <b>Email</b>
+                                            <input className={styles.input} type="text" name="email" onChange={handleChange}></input>
+                                            </label>
+
+                                        <label className={styles.inputfield}> <b>Heslo</b>
+                                        <input className={styles.input} type="password" name="password" onChange={handleChange}></input>
+                                        </label>
+
+                                            <div className={styles.inputfield}>
+                                            <button className={styles.btn} type="submit">Registrovať</button>
+                                            </div>
+
+                                        </div>
+
+                                    </form>
+
+                        {/*</form>*/}
+                    </div>
+                </div>
+
+
+
+
     </>)
 }
