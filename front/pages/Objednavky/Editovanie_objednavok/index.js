@@ -1,12 +1,12 @@
+import styles from "../../../styles/edit.module.css"
 import LeftNavbar from "../../../components/User/LeftNavbar";
 import Header from "../../../components/User/Header";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { withRouter } from 'next/router';
 import {useState} from 'react';
 import Link from 'next/link';
 import React from 'react'
-
 const axios = require('axios');
+
 
 const EditovanieWithRouter = (props) => {
     const router = useRouter()
@@ -112,40 +112,51 @@ export default withRouter (class Editovanie extends React.Component {
     render() {
         return (
             <>
+                <div className={styles.ground}>
             <LeftNavbar/>
               <Header/>
-            <div className="position-absolute top-50 start-50 translate-middle">
+
+            <div className={styles.wrapperr} >
+
                 <form onSubmit={this.onSubmit}>
-                    <h3>Editovanie do databazy</h3>
+                    <div className={styles.title}>
+                    <h3 >Editovanie údajov v databáze</h3>
+                    </div>
                     <br/>
-                    <label>
-                        Firstname:
-                        <input type="text" name="firstname" placeholder={this.state.data.firstname} onChange={this.onChangeExpenseName} />
+                    <div className={styles.form}>
+                    <label className={styles.inputfield}>
+                        Meno:
+                        <input className={styles.input}  type="text" name="firstname" placeholder={this.state.data.firstname} onChange={this.onChangeExpenseName} />
                     </label>
-                    <label>
-                        Lastname:
-                        <input type="text" name="lastname" placeholder={this.state.data.lastname} onChange={this.onChangeExpenseLastname} />
+                    <label className={styles.inputfield}>
+                        Priezvisko:
+                        <input className={styles.input} type="text" name="lastname" placeholder={this.state.data.lastname} onChange={this.onChangeExpenseLastname} />
                     </label>
-                    <label>
+                    <label className={styles.inputfield}>
                         Email:
-                        <input type="text" name="email" placeholder={this.state.data.email} onChange={this.onChangeExpenseEmail} />
+                        <input className={styles.input} type="text" name="email" placeholder={this.state.data.email} onChange={this.onChangeExpenseEmail} />
                     </label>
-                    <label>
-                        Vaha:
-                        <input type="text" name="vaha" placeholder={this.state.data.vaha} onChange={this.onChangeExpenseVaha}/>kg
+                    <label className={styles.inputfield}>
+                        Váha v kg:
+                        <input className={styles.input} type="text" name="vaha" placeholder={this.state.data.vaha} onChange={this.onChangeExpenseVaha}/>
                     </label>
-                    <label>
+                    <label className={styles.inputfield}>
                         Krajina:
-                        <select name="krajina"  onChange={this.onChangeExpenseKrajina}>
+                        <select className={styles.custom_select} name="krajina"  onChange={this.onChangeExpenseKrajina}>
                             <option value="SK">SK</option>
                             <option value="EU">EU</option>
                             <option value="SVET">SVET</option>
                         </select>
                     </label>
                     <br/>
-                    <button type="submit">Submit</button>
+                        <div className={styles.inputfield}>
+                    <button className={styles.btn} type="submit">Potvrdiť</button>
+                        </div>
+
+                    </div>
                 </form>
             </div>
+                </div>
             </>
         )
     }
