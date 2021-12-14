@@ -1,6 +1,7 @@
 import LeftNavbar from "../../components/User/LeftNavbar";
 import Header from "../../components/User/Header";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import  styles from "../../styles/Table.module.css"
 import Link from 'next/link';
 import React from 'react';
 
@@ -46,18 +47,18 @@ class User extends React.Component {
             <>
                 <LeftNavbar/>
                 <Header/>
-
-                <div className="position-absolute top-50 start-50 translate-middle">
-                    <h1>Objednavky:</h1>
+                <div className={styles.table}>
+                <div className={styles.customers}>
+                    <h1>Objednávky:</h1>
                     <table>
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>Lastname</th>
+                            <th>Meno</th>
+                            <th>Priezvisko</th>
                             <th>Email</th>
-                            <th>Vaha</th>
-                            <th>krajina</th>
+                            <th>Váha(kg)</th>
+                            <th>Krajina</th>
                             <th>Akcie</th>
                         </tr>
                         </thead>
@@ -73,15 +74,17 @@ class User extends React.Component {
                                         <td key="vaha">{result.vaha}</td>
                                         <td key="krajina">{result.krajina}</td>
                                         <td>
-                                            <button type="button" class="btn btn-outline-secondary">
+
+                                            <button  type="button" class="btn btn-outline-secondary">
                                                 <Link className="text-decoration-none" href={{
                                                     pathname: 'Objednavky/Editovanie_objednavok/',
                                                     query: {id: result.id}
-                                                }}><a>edit</a></Link></button>
+                                                }}><a>Edit</a></Link></button>
                                             <button type="button"
-                                                    className="btn btn-outline-secondary text-decoration-none"
+                                                    className="btn btn-outline-danger text-decoration-none"
                                                     onClick={() => this.deleteObjednavka(result.id)}>Delete
                                             </button>
+
                                         </td>
                                     </tr>
                                 )
@@ -90,6 +93,7 @@ class User extends React.Component {
                         </tbody>
                     </table>
                 </div>
+                    </div>
             </>
         )
     }
