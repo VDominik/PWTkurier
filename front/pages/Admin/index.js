@@ -1,9 +1,10 @@
+
 import LeftNavbar from "../../components/Admin/LeftNavbar";
 import Header from "../../components/Admin/Header";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {withRouter} from 'next/router';
 const axios = require('axios');
 import React from 'react'
+import styles from "../../styles/admin.module.css";
 
 //Zadefinovanie a predpríprava routera na vloženie do class
 const EditovanieWithRouter = (props) => {
@@ -117,90 +118,101 @@ export default withRouter(class Admin extends React.Component {
         render() {
             return (
                 <>
+                    <div className={styles.ground}>
                     <LeftNavbar/>
                     <Header/>
-
-                    {/*Vycentruje*/}
-                    <div className="position-absolute top-50 start-50 translate-middle">
+                    <div >
 
                         {/*Nastavenie formu a buttonu pre SK*/}
-                        <div>
-                            <form onSubmit={this.onSubmit}>
-                                <h3>Editovanie pre SK</h3>
+                        <div className={styles.form}>
+                            <form className={styles.font} onSubmit={this.onSubmit}>
+                                <h3 className={styles.h3}>Editovanie pre SK</h3>
                                 <br/>
                                 <label>
+
                                     <input type="hidden" name="id" value="1"></input>
-                                    Vaha:
-                                    <input type="text" name="vaha" placeholder={this.state.data.vaha}
+                                    Váha:
+                                    <input  type="text" name="vaha" placeholder={this.state.data.vaha}
                                            onChange={this.onChangeExpenseVaha}/>
                                 </label>
                                 <label>
-                                    Nastavenie Sluzby(DO):
+                                    Nastavenie Služby(DO):
                                     <input type="text" name="lastname" placeholder={this.state.data.SluzbaDo}
                                            onChange={this.onChangeExpenseSluzbaDo}/>
                                 </label>
                                 <label>
-                                    Nastavenie Sluzby(OD):
+                                    Nastavenie Služby(OD):
                                     <input type="text" name="email" placeholder={this.state.data.SluzbaOd}
                                            onChange={this.onChangeExpenseSluzbaOd}/>
                                 </label>
-                                <button type="submit">Submit</button>
+                                <button className={styles.submit} type="submit">Zmeniť</button>
                                 <br/>
+
                             </form>
                         </div>
 
                         {/*Nastavenie formu a buttonu pre EU*/}
-                        <div>
-                            <form onSubmit={this.onSubmit}>
-                                <h3>Editovanie pre EU</h3>
+                        <div className={styles.form}>
+                            <form  className={styles.font} onSubmit={this.onSubmit}>
+                                <table className={styles.table}>
+                                <h3 className={styles.h3}>Editovanie pre EU</h3>
                                 <br/>
                                 <label>
                                     <input type="hidden" name="id" value="2"></input>
-                                    Vaha:
+                                    Váha:
                                     <input type="text" name="vaha1" placeholder={this.state.data1.vaha}
                                            onChange={this.onChangeExpenseVaha}/>
                                 </label>
                                 <label>
-                                    Nastavenie Sluzby(DO):
+                                    Nastavenie Služby(DO):
                                     <input type="text" name="lastname1" placeholder={this.state.data1.SluzbaDo}
                                            onChange={this.onChangeExpenseSluzbaDo}/>
                                 </label>
                                 <label>
-                                    Nastavenie Sluzby(OD):
+                                    Nastavenie Služby(OD):
                                     <input type="text" name="email1" placeholder={this.state.data1.SluzbaOd}
                                            onChange={this.onChangeExpenseSluzbaOd}/>
                                 </label>
-                                <button type="submit">Submit</button>
+                                <button className={styles.submit} type="submit">Zmeniť</button>
                                 <br/>
+                                </table>
                             </form>
+
                         </div>
 
                         {/*Nastavenie formu a buttonu pre SVET*/}
-                        <div>
-                            <form onSubmit={this.onSubmit}>
-                                <h3>Editovanie pre SVET</h3>
+                        <div className={styles.form}>
+                            <form   className={styles.font} onSubmit={this.onSubmit}>
+                                <table className={styles.table}>
+                                <h3 className={styles.h3}>Editovanie pre SVET</h3>
                                 <br/>
+
                                 <label>
                                     <input type="hidden" name="id" value="3"></input>
-                                    Vaha:
+                                    Váha:
                                     <input type="text" name="vaha2" placeholder={this.state.data2.vaha}
                                            onChange={this.onChangeExpenseVaha}/>
                                 </label>
                                 <label>
-                                    Nastavenie Sluzby(DO):
+                                    Nastavenie Služby(DO):
                                     <input type="text" name="lastname2" placeholder={this.state.data2.SluzbaDo}
                                            onChange={this.onChangeExpenseSluzbaDo}/>
                                 </label>
                                 <label>
-                                    Nastavenie Sluzby(OD):
+                                    Nastavenie Služby(OD):
                                     <input type="text" name="email2" placeholder={this.state.data2.SluzbaOd}
                                            onChange={this.onChangeExpenseSluzbaOd}/>
                                 </label>
-                                <button type="submit">Submit</button>
+                                <button className={styles.submit} type="submit">Zmeniť</button>
                                 <br/>
+                                </table>
+
                             </form>
+
                         </div>
                     </div>
+                    </div>
+
                 </>
             )
         }
