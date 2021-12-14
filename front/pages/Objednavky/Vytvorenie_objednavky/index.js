@@ -3,6 +3,8 @@ import {useState} from 'react';
 import axios from 'axios';
 import LeftNavbar from "../../../components/User/LeftNavbar";
 import Header from "../../../components/User/Header";
+import  style from"../../../styles/Table.module.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home = () => {
 
@@ -37,7 +39,7 @@ const Home = () => {
             if (response['success']) {
                 console.log("Login Successful");
                 router.push('/User');
-                alert("Vaša objednávka bola vytvorená, bude použítá kruierská služba: " + response.msg );
+                alert("Vaša objednávka bola vytvorená, bude použítá kurierská služba: " + response.msg );
             } else {
                 alert("Niekde nastala chyba, prosím skúste to znovu!");
             }
@@ -47,44 +49,55 @@ const Home = () => {
 
     //Formulár
     return (
-        <div>
+        <div className={style.ground}>
+            <div>
             <LeftNavbar />
             <Header />
-            <div className="position-absolute top-50 start-50 translate-middle">
+
+            <div className={style.wrapperr}>
             <form onSubmit={handleSubmit}>
-                <h3>Pridavanie do databazy</h3>
+                <div className={style.title}>
+                <h3>Vytvorenie objednávky</h3>
+                </div>
                 <br/>
-                <label>
-                    Firstname:
-                    <input type="text" name="firstname" value={modifiedData.firstname} onChange={handleChange}/>
+                <div className={style.form}>
+                <label className={style.inputfield}>
+                    Meno:
+                    <input type="text"  name="firstname"  className={style.input} value={modifiedData.firstname} onChange={handleChange}/>
                 </label>
-                <label>
-                    Lastname:
-                    <input type="text" name="lastname" value={modifiedData.lastname} onChange={handleChange}
+                <label className={style.inputfield}>
+                    Prezvisko:
+                    <input type="text"  name="lastname" className={style.input} value={modifiedData.lastname} onChange={handleChange}
                     />
                 </label>
-                <label>
+                <label className={style.inputfield}>
                     Email:
-                    <input type="text" name="email" value={modifiedData.email} onChange={handleChange}
+                    <input type="text"  name="email" className={style.input} value={modifiedData.email} onChange={handleChange}
                     />
                 </label>
-                <label>
-                    Vaha:
-                    <input type="text" name="vaha" value={modifiedData.vaha} onChange={handleChange}
-                    />kg
+                <label className={style.inputfield}>
+                    Váha(kg):
+                    <input type="text"  name="vaha" className={style.input} value={modifiedData.vaha} onChange={handleChange}
+                    />
                 </label>
-                <label>
+                <label className={style.inputfield}>
                     Krajina:
-                    <select name="krajina"  onChange={handleChange}>
+                    <select name="krajina" className={style.custom_select}  onChange={handleChange}>
                         <option value="SK"  >SK</option>
                         <option value="EU"  >EU</option>
                         <option value="SVET" >SVET</option>
                     </select>
                 </label>
                 <br/>
-                <button type="submit">Submit</button>
+                    <div className={style.inputfield}>
+                <button className={style.btn} type="submit">Odoslať</button>
+                    </div>
+                    </div>
+
             </form>
+
         </div>
+            </div>
         </div>
     );
 };
