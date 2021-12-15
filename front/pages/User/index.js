@@ -1,7 +1,7 @@
 import LeftNavbar from "../../components/User/LeftNavbar";
+import styles from "../../styles/Table.module.css";
 import Header from "../../components/User/Header";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import  styles from "../../styles/Table.module.css"
 import Link from 'next/link';
 import React from 'react';
 
@@ -48,52 +48,51 @@ class User extends React.Component {
                 <LeftNavbar/>
                 <Header/>
                 <div className={styles.table}>
-                <div className={styles.customers}>
-                    <h1>Objednávky:</h1>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Meno</th>
-                            <th>Priezvisko</th>
-                            <th>Email</th>
-                            <th>Váha(kg)</th>
-                            <th>Krajina</th>
-                            <th>Akcie</th>
-                        </tr>
-                        </thead>
+                    <div className={styles.customers}>
+                        <h1>Objednávky:</h1>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Meno</th>
+                                <th>Priezvisko</th>
+                                <th>Email</th>
+                                <th>Váha(kg)</th>
+                                <th>Krajina</th>
+                                <th>Akcie</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {this.state.data.map((result) => {
+                                    return (
+                                        <tr key={result.id}>
+                                            <td key="id">{result.id}</td>
+                                            <td key="firstname">{result.firstname}</td>
+                                            <td key="lastname">{result.lastname}</td>
+                                            <td key="email">{result.email}</td>
+                                            <td key="vaha">{result.vaha}</td>
+                                            <td key="krajina">{result.krajina}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-outline-secondary">
+                                                    <Link className="text-decoration-none" href={{
+                                                        pathname: 'Objednavky/Editovanie_objednavok/',
+                                                        query: {id: result.id}
+                                                    }}><a>Edit</a></Link>
+                                                </button>
+                                                <button type="button"
+                                                        className="btn btn-outline-danger text-decoration-none"
+                                                        onClick={() => this.deleteObjednavka(result.id)}>Delete
+                                                </button>
 
-                        <tbody>
-                        {this.state.data.map((result) => {
-                                return (
-                                    <tr key={result.id}>
-                                        <td key="id">{result.id}</td>
-                                        <td key="firstname">{result.firstname}</td>
-                                        <td key="lastname">{result.lastname}</td>
-                                        <td key="email">{result.email}</td>
-                                        <td key="vaha">{result.vaha}</td>
-                                        <td key="krajina">{result.krajina}</td>
-                                        <td>
-
-                                            <button  type="button" class="btn btn-outline-secondary">
-                                                <Link className="text-decoration-none" href={{
-                                                    pathname: 'Objednavky/Editovanie_objednavok/',
-                                                    query: {id: result.id}
-                                                }}><a>Edit</a></Link></button>
-                                            <button type="button"
-                                                    className="btn btn-outline-danger text-decoration-none"
-                                                    onClick={() => this.deleteObjednavka(result.id)}>Delete
-                                            </button>
-
-                                        </td>
-                                    </tr>
-                                )
-                            }
-                        )}
-                        </tbody>
-                    </table>
-                </div>
+                                            </td>
+                                        </tr>
+                                    )
+                                }
+                            )}
+                            </tbody>
+                        </table>
                     </div>
+                </div>
             </>
         )
     }

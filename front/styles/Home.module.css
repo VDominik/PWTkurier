@@ -54,6 +54,7 @@
     transition: 0.2s;
 }
 
+
 @media only screen and (max-width: 768px) {
     .navcontainer {
         width: 75px;

@@ -1,6 +1,6 @@
 /* pozadie */
 .groundmain{
-    background-image: url("../public/bg.png");
+    background-image: url("../public/img/pozadie.jpg");
     background-size: cover;
     background-repeat: repeat;
     position: absolute;

@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "../../styles/Home.module.css";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSignOutAlt} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import styles from "../../styles/Home.module.css";
+import React from "react";
 
 function LeftNavbar() {
     return (
