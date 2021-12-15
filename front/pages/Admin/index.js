@@ -1,10 +1,9 @@
-
 import LeftNavbar from "../../components/Admin/LeftNavbar";
 import Header from "../../components/Admin/Header";
+import styles from "../../styles/admin.module.css";
 import {withRouter} from 'next/router';
 const axios = require('axios');
 import React from 'react'
-import styles from "../../styles/admin.module.css";
 
 //Zadefinovanie a predpríprava routera na vloženie do class
 const EditovanieWithRouter = (props) => {
@@ -119,100 +118,105 @@ export default withRouter(class Admin extends React.Component {
             return (
                 <>
                     <div className={styles.ground}>
-                    <LeftNavbar/>
-                    <Header/>
-                    <div >
+                        <LeftNavbar/>
+                        <Header/>
+                        <div>
 
-                        {/*Nastavenie formu a buttonu pre SK*/}
-                        <div className={styles.form}>
-                            <form className={styles.font} onSubmit={this.onSubmit}>
-                                <h3 className={styles.h3}>Editovanie pre SK</h3>
-                                <br/>
-                                <label>
+                            {/*Nastavenie formu a buttonu pre SK*/}
+                            <div className={styles.form}>
+                                <form className={styles.font} onSubmit={this.onSubmit}>
+                                    <h3 className={styles.h3}>Editovanie pre SK</h3>
 
-                                    <input type="hidden" name="id" value="1"></input>
-                                    Váha:
-                                    <input  type="text" name="vaha" placeholder={this.state.data.vaha}
-                                           onChange={this.onChangeExpenseVaha}/>
-                                </label>
-                                <label>
-                                    Nastavenie Služby(DO):
-                                    <input type="text" name="lastname" placeholder={this.state.data.SluzbaDo}
-                                           onChange={this.onChangeExpenseSluzbaDo}/>
-                                </label>
-                                <label>
-                                    Nastavenie Služby(OD):
-                                    <input type="text" name="email" placeholder={this.state.data.SluzbaOd}
-                                           onChange={this.onChangeExpenseSluzbaOd}/>
-                                </label>
-                                <button className={styles.submit} type="submit">Zmeniť</button>
-                                <br/>
+                                    <br/>
+                                    <label>
+                                        <input type="hidden" name="id" value="1"></input>
+                                        Váha:
+                                        <input type="text" name="vaha" placeholder={this.state.data.vaha}
+                                               onChange={this.onChangeExpenseVaha}/>
+                                    </label>
 
-                            </form>
-                        </div>
+                                    <label>
+                                        Nastavenie Služby(DO):
+                                        <input type="text" name="lastname" placeholder={this.state.data.SluzbaDo}
+                                               onChange={this.onChangeExpenseSluzbaDo}/>
+                                    </label>
 
-                        {/*Nastavenie formu a buttonu pre EU*/}
-                        <div className={styles.form}>
-                            <form  className={styles.font} onSubmit={this.onSubmit}>
-                                <table className={styles.table}>
-                                <h3 className={styles.h3}>Editovanie pre EU</h3>
-                                <br/>
-                                <label>
-                                    <input type="hidden" name="id" value="2"></input>
-                                    Váha:
-                                    <input type="text" name="vaha1" placeholder={this.state.data1.vaha}
-                                           onChange={this.onChangeExpenseVaha}/>
-                                </label>
-                                <label>
-                                    Nastavenie Služby(DO):
-                                    <input type="text" name="lastname1" placeholder={this.state.data1.SluzbaDo}
-                                           onChange={this.onChangeExpenseSluzbaDo}/>
-                                </label>
-                                <label>
-                                    Nastavenie Služby(OD):
-                                    <input type="text" name="email1" placeholder={this.state.data1.SluzbaOd}
-                                           onChange={this.onChangeExpenseSluzbaOd}/>
-                                </label>
-                                <button className={styles.submit} type="submit">Zmeniť</button>
-                                <br/>
-                                </table>
-                            </form>
+                                    <label>
+                                        Nastavenie Služby(OD):
+                                        <input type="text" name="email" placeholder={this.state.data.SluzbaOd}
+                                               onChange={this.onChangeExpenseSluzbaOd}/>
+                                    </label>
 
-                        </div>
+                                    <button className={styles.submit} type="submit">Zmeniť</button>
+                                    <br/>
+                                </form>
+                            </div>
 
-                        {/*Nastavenie formu a buttonu pre SVET*/}
-                        <div className={styles.form}>
-                            <form   className={styles.font} onSubmit={this.onSubmit}>
-                                <table className={styles.table}>
-                                <h3 className={styles.h3}>Editovanie pre SVET</h3>
-                                <br/>
+                            {/*Nastavenie formu a buttonu pre EU*/}
+                            <div className={styles.form}>
+                                <form className={styles.font} onSubmit={this.onSubmit}>
+                                    <table className={styles.table}>
+                                        <h3 className={styles.h3}>Editovanie pre EU</h3>
 
-                                <label>
-                                    <input type="hidden" name="id" value="3"></input>
-                                    Váha:
-                                    <input type="text" name="vaha2" placeholder={this.state.data2.vaha}
-                                           onChange={this.onChangeExpenseVaha}/>
-                                </label>
-                                <label>
-                                    Nastavenie Služby(DO):
-                                    <input type="text" name="lastname2" placeholder={this.state.data2.SluzbaDo}
-                                           onChange={this.onChangeExpenseSluzbaDo}/>
-                                </label>
-                                <label>
-                                    Nastavenie Služby(OD):
-                                    <input type="text" name="email2" placeholder={this.state.data2.SluzbaOd}
-                                           onChange={this.onChangeExpenseSluzbaOd}/>
-                                </label>
-                                <button className={styles.submit} type="submit">Zmeniť</button>
-                                <br/>
-                                </table>
+                                        <br/>
+                                        <label>
+                                            <input type="hidden" name="id" value="2"></input>
+                                            Váha:
+                                            <input type="text" name="vaha1" placeholder={this.state.data1.vaha}
+                                                   onChange={this.onChangeExpenseVaha}/>
+                                        </label>
 
-                            </form>
+                                        <label>
+                                            Nastavenie Služby(DO):
+                                            <input type="text" name="lastname1" placeholder={this.state.data1.SluzbaDo}
+                                                   onChange={this.onChangeExpenseSluzbaDo}/>
+                                        </label>
 
+                                        <label>
+                                            Nastavenie Služby(OD):
+                                            <input type="text" name="email1" placeholder={this.state.data1.SluzbaOd}
+                                                   onChange={this.onChangeExpenseSluzbaOd}/>
+                                        </label>
+
+                                        <button className={styles.submit} type="submit">Zmeniť</button>
+                                        <br/>
+                                    </table>
+                                </form>
+                            </div>
+
+                            {/*Nastavenie formu a buttonu pre SVET*/}
+                            <div className={styles.form}>
+                                <form className={styles.font} onSubmit={this.onSubmit}>
+                                    <table className={styles.table}>
+                                        <h3 className={styles.h3}>Editovanie pre SVET</h3>
+
+                                        <br/>
+                                        <label>
+                                            <input type="hidden" name="id" value="3"></input>
+                                            Váha:
+                                            <input type="text" name="vaha2" placeholder={this.state.data2.vaha}
+                                                   onChange={this.onChangeExpenseVaha}/>
+                                        </label>
+
+                                        <label>
+                                            Nastavenie Služby(DO):
+                                            <input type="text" name="lastname2" placeholder={this.state.data2.SluzbaDo}
+                                                   onChange={this.onChangeExpenseSluzbaDo}/>
+                                        </label>
+
+                                        <label>
+                                            Nastavenie Služby(OD):
+                                            <input type="text" name="email2" placeholder={this.state.data2.SluzbaOd}
+                                                   onChange={this.onChangeExpenseSluzbaOd}/>
+                                        </label>
+                                        <button className={styles.submit} type="submit">Zmeniť</button>
+
+                                        <br/>
+                                    </table>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    </div>
-
                 </>
             )
         }

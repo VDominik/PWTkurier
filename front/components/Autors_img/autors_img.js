@@ -23,7 +23,7 @@ const Navbar = () => {
                     {/*DÁVID*/}
                     <div className="col text-center p-3">
                         <img className="bd-placeholder-img rounded-circle m-3" width="200" height="200"
-                             src="/img/autors_imgs/dg.jpg"/>
+                             src="/img/autors_imgs/dg.png"/>
 
                         <h2 className="fs-3 mx-lg-3 text-center">Dávid Galaba</h2>
                         <div className="mx-lg-5">
@@ -42,7 +42,7 @@ const Navbar = () => {
                     {/*LUBOMÍR*/}
                     <div className="col text-center p-3">
                         <img className="bd-placeholder-img rounded-circle m-3" width="200" height="200"
-                             src="/img/autors_imgs/lc.jpg"/>
+                             src="/img/autors_imgs/lc.png"/>
                         <h2 className="fs-3 mx-lg-2 text-center">Ľubomír Cverčko</h2>
                         <div className="mx-lg-5">
                             <button type="button" className="btn btn-outline-dark ">Front-end</button>

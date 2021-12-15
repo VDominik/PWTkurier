@@ -1,8 +1,8 @@
+import styles from "../../styles/Register.module.css";
 import Navbar from "../../components/Navbar/navbar";
 import {useRouter} from 'next/router';
 import {useState} from 'react';
 import axios from 'axios';
-import styles from "../../styles/Register.module.css";
 
 export default function register() {
 
@@ -38,48 +38,47 @@ export default function register() {
         alert("Úspešne si sa zaregistroval!");
     }
 
-    return (<>
-        <Navbar/>
-                <div>
-                    <div className={styles.groundmain}>
+    return (
+        <>
+            <Navbar/>
+            <div>
+                <div className={styles.groundmain}>
 
-                                    <form className={styles.wrapperr} onSubmit={handleSubmit}>
-                                        <div className={styles.title}>
-                                        <h1>Registrácia</h1>
-                                        </div>
+                    <form className={styles.wrapperr} onSubmit={handleSubmit}>
+                        <div className={styles.title}>
+                            <h1>Registrácia</h1>
+                        </div>
 
-                                        <div className={styles.form}>
-                                            <label className={styles.inputfield}><b>Meno</b>
-                                            <input className={styles.input} name="firstname" name="firstname" onChange={handleChange}></input>
-                                            </label>
+                        <div className={styles.form}>
 
-                                            <label className={styles.inputfield}><b>Priezvisko</b>
-                                            <input className={styles.input} name="lastname" name="lastname" onChange={handleChange}></input>
-                                            </label>
+                            <label className={styles.inputfield}><b>Meno</b>
+                                <input className={styles.input} name="firstname" name="firstname"
+                                       onChange={handleChange}></input>
+                            </label>
 
+                            <label className={styles.inputfield}><b>Priezvisko</b>
+                                <input className={styles.input} name="lastname" name="lastname"
+                                       onChange={handleChange}></input>
+                            </label>
 
-                                            <label className={styles.inputfield}> <b>Email</b>
-                                            <input className={styles.input} type="text" name="email" onChange={handleChange}></input>
-                                            </label>
+                            <label className={styles.inputfield}> <b>Email</b>
+                                <input className={styles.input} type="text" name="email"
+                                       onChange={handleChange}></input>
+                            </label>
 
-                                        <label className={styles.inputfield}> <b>Heslo</b>
-                                        <input className={styles.input} type="password" name="password" onChange={handleChange}></input>
-                                        </label>
+                            <label className={styles.inputfield}> <b>Heslo</b>
+                                <input className={styles.input} type="password" name="password"
+                                       onChange={handleChange}></input>
+                            </label>
 
-                                            <div className={styles.inputfield}>
-                                            <button className={styles.btn} type="submit">Registrovať</button>
-                                            </div>
+                            <div className={styles.inputfield}>
+                                <button className={styles.btn} type="submit">Registrovať</button>
+                            </div>
 
-                                        </div>
-
-                                    </form>
-
-                        {/*</form>*/}
-                    </div>
+                        </div>
+                    </form>
                 </div>
-
-
-
-
-    </>)
+            </div>
+        </>
+    )
 }

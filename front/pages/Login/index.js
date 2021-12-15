@@ -1,8 +1,8 @@
 import Navbar from "../../components/Navbar/navbar";
+import styles from "../../styles/Login.module.css";
 import {useRouter} from 'next/router';
 import React, {useState} from 'react'
 import axios from 'axios';
-import styles from "../../styles/Login.module.css";
 
 export default function login() {
     const router = useRouter();
@@ -44,42 +44,43 @@ export default function login() {
 
     return (
         <>
-
             <Navbar/>
             <div>
                 <div className={styles.groundmain}>
-
                     <form className={styles.wrapperr} onSubmit={(e) => handleSubmit(e)} action="" method="post">
 
                         <div className={styles.title}>
-                            <h1 >Prihlásenie</h1>
+                            <h1>Prihlásenie</h1>
                         </div>
 
-                            <div className={styles.form}>
+                        <div className={styles.form}>
 
-                                <label className={styles.inputfield}>
-                                    <img className={styles.iconuser} src='https://i.pinimg.com/originals/0c/3b/3a/0c3b3adb1a7530892e55ef36d3be6cb8.png'/>
-                                    <br/>
-                                    <input className={styles.input} onInput={(e) => setUsername(e.target.value)} type="text" id="username"
+                            <label className={styles.inputfield}>
+                                <img className={styles.iconuser}
+                                     src='https://i.pinimg.com/originals/0c/3b/3a/0c3b3adb1a7530892e55ef36d3be6cb8.png'/>
+                                <br/>
+                                <input className={styles.input} onInput={(e) => setUsername(e.target.value)} type="text"
+                                       id="username"
                                        value={username}/>
-                                </label>
+                            </label>
 
-                                <label className={styles.inputfield} htmlFor="">
-                                    <img className={styles.iconpw} src='https://icons-for-free.com/iconfiles/png/512/lock+password+protect+safety+security+icon-1320086045132546966.png'/>
-                                    <br/>
-                                <input className={styles.input} onInput={(e) => setPassword(e.target.value)} type="password" id="password"
+                            <label className={styles.inputfield} htmlFor="">
+                                <img className={styles.iconpw}
+                                     src='https://icons-for-free.com/iconfiles/png/512/lock+password+protect+safety+security+icon-1320086045132546966.png'/>
+                                <br/>
+                                <input className={styles.input} onInput={(e) => setPassword(e.target.value)}
+                                       type="password" id="password"
                                        value={password}/>
-                                </label>
+                            </label>
 
-                                        <div className={styles.inputfield}>
-                                            <input className={styles.btn} type="submit" value="Prihlásiť"/>
-
-                                            <a className={styles.btn} data-toggle="collapse" href="/Register" role="button">
-                                                Registrovať</a>
-                                        </div>
+                            <div className={styles.inputfield}>
+                                <input className={styles.btn} type="submit" value="Prihlásiť"/>
+                                <a className={styles.btn} data-toggle="collapse" href="/Register" role="button">
+                                    Registrovať</a>
                             </div>
+                        </div>
                     </form>
-            </div>
+                </div>
             </div>
         </>
     )
