@@ -1,0 +1,161 @@
+
+/* pozadie*/
+.ground{
+    background-image: url("../public/img/pozadie.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+/* form*/
+.wrapperr{
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    margin: 70px auto;
+    box-shadow: rgba(9, 112, 72, 0.3) +5px 5px, rgba(9, 112, 72, 0.2) +10px 10px, rgba(9, 112, 72, 0.1) +15px 15px, rgba(9, 112, 72, 0.05) +20px 20px, rgba(9, 112, 72, 0.025) +25px 25px;
+    padding: 30px;
+    -webkit-border-radius: .10px;
+    -moz-border-radius: .10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+}
+
+.wrapperr .title{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #000000;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.wrapperr .form{
+    width: 100%;
+}
+
+.wrapperr .form .inputfield{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.wrapperr .form .inputfield label{
+    width: 200px;
+    color: #757575;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.wrapperr .form .inputfield .input,
+.wrapperr .form .inputfield .textarea{
+    width: 100%;
+    outline: none;
+    border: 1px solid #d5dbd9;
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.wrapperr .form .inputfield .textarea{
+    width: 100%;
+    height: 125px;
+    resize: none;
+}
+
+.wrapperr .form .inputfield .custom_select{
+    position: relative;
+    width: 100%;
+    height: 37px;
+    border: 1px solid #d5dbd9;
+}
+
+.wrapperr .form .inputfield .custom_select:before{
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    border: 8px solid;
+    border-color: #d5dbd9 transparent transparent transparent;
+    pointer-events: none;
+}
+
+.wrapperr .form .inputfield .custom_select select{
+    -webkit-appearance: none;
+    -moz-appearance:   none;
+    appearance:        none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 1px solid #d5dbd9;
+    border-radius: 3px;
+}
+
+
+.wrapperr .form .inputfield .input:focus,
+.wrapperr .form .inputfield .textarea:focus,
+.wrapperr .form .inputfield .custom_select select:focus{
+    border: 1px solid #fec107;
+}
+
+.wrapperr .form .inputfield p{
+    font-size: 14px;
+    color: #757575;
+}
+.wrapperr .form .inputfield .check{
+    width: 15px;
+    height: 15px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+
+.wrapperr .form .inputfield .check .checkmark:before{
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    width: 5px;
+    height: 2px;
+    border: 2px solid;
+    border-color: transparent transparent #fff #fff;
+    transform: rotate(-45deg);
+    display: none;
+}
+
+.wrapperr .form .inputfield .btn{
+    width: 100%;
+    padding: 16px 10px;
+    font-size: 15px;
+    border: 0px;
+    background:  #097048;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+}
+
+.wrapperr .form .inputfield .btn:hover{
+    background:  #0c9762;
+}
+
+.wrapperr .form .inputfield:last-child{
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 900px) {
+    .wrapperr{
+        width: 50vw;
+    }
+    .ground{
+
+    }
+
+}
